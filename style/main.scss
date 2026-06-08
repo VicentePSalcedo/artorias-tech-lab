@@ -95,3 +95,32 @@ body {
   transform: translate(-50%, 0);
   animation: scrollCue 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
+
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+.ambient-blob-1 {
+  animation: ambientDrift 35s ease-in-out infinite;
+  will-change: transform;
+}
+
+.ambient-blob-2 {
+  animation: ambientDrift 45s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+}
