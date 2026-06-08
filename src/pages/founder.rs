@@ -6,21 +6,31 @@ pub fn FounderPage() -> impl IntoView {
     view! {
         <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             // Hero Section
-            <section class="text-center mb-20 flex flex-col items-center">
-                <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] mb-6" />
-                <div class="inline-block px-4 py-1.5 bg-emerald-950/50 border border-emerald-800/50 rounded-full text-sm text-emerald-400 font-mono mb-8 shadow-[0_0_15px_rgba(52,211,153,0.1)]">
-                    "whoami // Vicente - Elite Engineering. Zero Bureaucracy."
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4 mb-12">
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] mb-6" />
+                    <div class="inline-block px-4 py-1.5 bg-emerald-950/50 border border-emerald-800/50 rounded-full text-sm text-emerald-400 font-mono mb-8 shadow-[0_0_15px_rgba(52,211,153,0.1)]">
+                        "whoami // Vicente - Elite Engineering. Zero Bureaucracy."
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                        "I Build The Engine. "
+                        <br class="hidden md:block" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                            "You Own The Keys."
+                        </span>
+                    </h1>
+                    <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
+                        "Artorias Tech Lab doesn't have an account management team, a sales department, or a bloated corporate hierarchy. You work directly with a full-stack digital architect who designs, writes, and deploys every single line of code and infrastructure."
+                    </p>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-                    "I Build The Engine. "
-                    <br class="hidden md:block" />
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-                        "You Own The Keys."
-                    </span>
-                </h1>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    "Artorias Tech Lab doesn't have an account management team, a sales department, or a bloated corporate hierarchy. You work directly with a full-stack digital architect who designs, writes, and deploys every single line of code and infrastructure."
-                </p>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
             </section>
 
             // The Dual Pitch Grid
@@ -95,7 +105,7 @@ pub fn FounderPage() -> impl IntoView {
             </section>
 
             // Tech Stack & Capabilities Console
-            <section class="max-w-4xl mx-auto bento-scroll-card">
+            <section class="max-w-4xl mx-auto bento-scroll-card no-hover">
                 <div class="mb-6 text-center">
                     <h3 class="text-2xl font-bold text-slate-100">"Technical Competencies"</h3>
                     <p class="text-slate-400 mt-2">"The toolkit powering Artorias Tech Lab."</p>
