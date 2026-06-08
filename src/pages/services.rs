@@ -8,99 +8,19 @@ pub fn ServicesPage() -> impl IntoView {
 
     view! {
         <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            // Hero Section
-            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4 mb-12">
-                <div class="max-w-3xl mx-auto flex flex-col items-center">
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                        "Client "
-                        <br class="md:hidden" />
-                        <span class="animate-shimmer">
-                            "Services"
-                        </span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-                        "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
-                    </p>
-                </div>
-                
-                // Animated Scroll Indicator
-                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500">
-                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </div>
-            </section>
+            // Header Section
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="animate-shimmer">"Client Services"</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
+                </p>
+            </div>
 
             <div class="flex flex-col gap-12">
-                // Service 1: Custom Web Applications & Platforms
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors bento-scroll-card">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                    </div>
-                    <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                            <h2 class="text-2xl font-bold text-slate-100">"Custom Web Applications & Platforms"</h2>
-                            <div class="mt-2 md:mt-0 text-cyan-400 font-mono font-bold text-xl">"$5,000+"</div>
-                        </div>
-                        <p class="text-xs font-mono text-cyan-500/90 mb-4">
-                            "// For businesses that have outgrown off-the-shelf software and need a tailored digital asset."
-                        </p>
-                        <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "We engineer bespoke, production-ready web platforms, client portals, and internal tools built to solve specific operational bottlenecks. Leveraging type-safe, ultra-stable Rust architectures, we build software that scales infinitely, loads instantly, and runs without mystery crashes."
-                        </p>
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                            <ul class="space-y-2 text-slate-400">
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Bespoke Software Platforms & Customer Portals"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Secure Databases & Automatic Software Syncing"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Automated Cloud Setup (AWS & Secure Containers)"</li>
-                            </ul>
-                            <div class="flex items-center gap-4 w-full md:w-auto justify-end">
-                                <button 
-                                    on:click=move |_| set_show_apps_specs.update(|v| *v = !*v) 
-                                    class="px-4 py-2 rounded border border-slate-800 bg-slate-950 font-mono text-xs text-slate-400 hover:text-cyan-400 hover:border-cyan-500 transition-colors"
-                                >
-                                    {move || if show_apps_specs.get() { "// [hide tech specs]" } else { "// [view tech specs]" }}
-                                </button>
-                                <a 
-                                    href="/contact?service=custom-apps" 
-                                    class="px-6 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded text-sm transition-colors font-mono"
-                                >
-                                    "// Get Started"
-                                </a>
-                            </div>
-                        </div>
-
-                        // Interactive specs
-                        {move || show_apps_specs.get().then(|| view! {
-                            <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
-                                <div>
-                                    <span class="text-cyan-400 font-bold">"// STACK COMPONENTS"</span>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Language: Rust (Type-safe memory safety)"</div>
-                                        <div>"• Frontend: Leptos (SSR & WASM Hydration)"</div>
-                                        <div>"• API Gateway: Axum Web Framework"</div>
-                                        <div>"• Database: PostgreSQL / AWS Aurora RDS"</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="text-cyan-400 font-bold">"// OPERATIONS & DEPLOYMENT"</span>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Secure containerization using Docker & AWS ECS"</div>
-                                        <div>"• Automated Git-triggered CI/CD pipelines"</div>
-                                        <div>"• AWS IAM role-based least privilege security"</div>
-                                        <div>"• Secure credential management with Secrets Manager"</div>
-                                    </div>
-                                </div>
-                            </div>
-                        })}
-                    </div>
-                </div>
-
-                // Service 2: Digital Foundation Systems
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-emerald-500/50 transition-colors bento-scroll-card">
+                // Service 1: Digital Foundation Systems (Originally Service 2)
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -165,8 +85,74 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                 </div>
 
+                // Service 2: Custom Web Applications & Platforms (Originally Service 1)
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h2 class="text-2xl font-bold text-slate-100">"Custom Web Applications & Platforms"</h2>
+                            <div class="mt-2 md:mt-0 text-cyan-400 font-mono font-bold text-xl">"$5,000+"</div>
+                        </div>
+                        <p class="text-xs font-mono text-cyan-500/90 mb-4">
+                            "// For businesses that have outgrown off-the-shelf software and need a tailored digital asset."
+                        </p>
+                        <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
+                            "We engineer bespoke, production-ready web platforms, client portals, and internal tools built to solve specific operational bottlenecks. Leveraging type-safe, ultra-stable Rust architectures, we build software that scales infinitely, loads instantly, and runs without mystery crashes."
+                        </p>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                            <ul class="space-y-2 text-slate-400">
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Bespoke Software Platforms & Customer Portals"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Secure Databases & Automatic Software Syncing"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Automated Cloud Setup (AWS & Secure Containers)"</li>
+                            </ul>
+                            <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+                                <button 
+                                    on:click=move |_| set_show_apps_specs.update(|v| *v = !*v) 
+                                    class="px-4 py-2 rounded border border-slate-800 bg-slate-950 font-mono text-xs text-slate-400 hover:text-cyan-400 hover:border-cyan-500 transition-colors"
+                                >
+                                    {move || if show_apps_specs.get() { "// [hide tech specs]" } else { "// [view tech specs]" }}
+                                </button>
+                                <a 
+                                    href="/contact?service=custom-apps" 
+                                    class="px-6 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded text-sm transition-colors font-mono"
+                                >
+                                    "// Get Started"
+                                </a>
+                            </div>
+                        </div>
+
+                        // Interactive specs
+                        {move || show_apps_specs.get().then(|| view! {
+                            <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
+                                <div>
+                                    <span class="text-cyan-400 font-bold">"// STACK COMPONENTS"</span>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
+                                        <div>"• Language: Rust (Type-safe memory safety)"</div>
+                                        <div>"• Frontend: Leptos (SSR & WASM Hydration)"</div>
+                                        <div>"• API Gateway: Axum Web Framework"</div>
+                                        <div>"• Database: PostgreSQL / AWS Aurora RDS"</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-cyan-400 font-bold">"// OPERATIONS & DEPLOYMENT"</span>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
+                                        <div>"• Secure containerization using Docker & AWS ECS"</div>
+                                        <div>"• Automated Git-triggered CI/CD pipelines"</div>
+                                        <div>"• AWS IAM role-based least privilege security"</div>
+                                        <div>"• Secure credential management with Secrets Manager"</div>
+                                    </div>
+                                </div>
+                            </div>
+                        })}
+                    </div>
+                </div>
+
                 // Service 3: Infrastructure Engineering & Automation
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors bento-scroll-card">
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -233,7 +219,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Engagement Parameters / Gatekeeper Section
-            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden font-mono text-sm text-slate-300 bento-scroll-card">
+            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden font-mono text-sm text-slate-300">
                 <div class="border-b border-slate-800 pb-3 mb-6 flex justify-between items-center text-xs text-slate-500">
                     <span>"CONFIG // sys.config"</span>
                     <span class="text-emerald-500">"SYS_STATUS: ACTIVE"</span>
@@ -260,7 +246,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Contact CTA
-            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center bento-scroll-card">
+            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center">
                 <h2 class="text-3xl font-bold text-slate-100 mb-4">"Let's build something extraordinary."</h2>
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
                     "If you are ready to upgrade your business infrastructure or build a custom web application, let's talk. No high-pressure sales, just an honest conversation about what you need."
