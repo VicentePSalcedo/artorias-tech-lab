@@ -5,7 +5,7 @@ use crate::components::terminal::TerminalMock;
 #[component]
 pub fn HomePage() -> impl IntoView {
     view! {
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col gap-16 pb-24">
             // Hero Section
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-3xl mx-auto flex flex-col items-center">

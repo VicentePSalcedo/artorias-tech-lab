@@ -52,7 +52,16 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                         
                         function updateProgress() {
                             const viewportHeight = window.innerHeight;
+                            const scrollY = window.scrollY || window.pageYOffset;
+                            const totalHeight = document.documentElement.scrollHeight;
+                            const isAtBottom = (viewportHeight + scrollY) >= (totalHeight - 80);
+                            
                             visibleCards.forEach(card => {
+                                if (isAtBottom) {
+                                    card.style.setProperty('--scroll-progress', '1.000');
+                                    return;
+                                }
+                                
                                 const rect = card.getBoundingClientRect();
                                 const startScroll = viewportHeight;
                                 const endScroll = viewportHeight * 0.25;
