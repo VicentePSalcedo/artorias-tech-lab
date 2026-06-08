@@ -6,9 +6,9 @@ pub fn AppLayout(children: Children) -> impl IntoView {
         <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-400/30 bg-grid-pattern relative overflow-x-hidden">
             // Subtle Background Ambiance Blobs
             <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-                <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-cyan-500/10 blur-[130px] ambient-blob-1"></div>
-                <div class="absolute top-[40%] right-[-15%] w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full bg-emerald-500/5 blur-[160px] ambient-blob-2"></div>
-                <div class="absolute bottom-[-10%] left-[10%] w-[45vw] h-[45vw] max-w-[500px] max-h-[500px] rounded-full bg-indigo-500/5 blur-[120px] ambient-blob-1"></div>
+                <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[650px] max-h-[650px] rounded-full bg-cyan-500/18 blur-[120px] ambient-blob-1"></div>
+                <div class="absolute top-[35%] right-[-15%] w-[70vw] h-[70vw] max-w-[750px] max-h-[750px] rounded-full bg-emerald-500/12 blur-[150px] ambient-blob-2"></div>
+                <div class="absolute bottom-[-5%] left-[5%] w-[50vw] h-[50vw] max-w-[550px] max-h-[550px] rounded-full bg-indigo-500/10 blur-[110px] ambient-blob-1"></div>
             </div>
 
             <header class="sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md">
