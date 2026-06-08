@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "leptos-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@leptos-mcp/server"],
+      "env": {
+        "WORKSPACE_ROOT": "./",
+        "LEPTOS_VERSION": "0.8"
+      },
+      "settings": {
+        "autoLintOnSave": true,
+        "validateMacros": true
+      }
+    },
+    "nushell-mcp": {
+      "command": "npx",
+      "args": ["-y", "nushell-mcp"]
+    }
+  }
+}

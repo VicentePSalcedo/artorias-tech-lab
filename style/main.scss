@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'FiraCode';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/FiraCode-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'FiraCode';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/FiraCode-Bold.ttf') format('truetype');
+  }
+}
+
+
+body {
+    @apply bg-slate-950 text-slate-200 font-sans antialiased;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    to right,
+    #22d3ee 15%,
+    #34d399 35%,
+    #e6fcf4 50%,
+    #34d399 65%,
+    #22d3ee 85%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 8s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.25)) drop-shadow(0 0 2px rgba(34, 211, 238, 0.15));
+}
