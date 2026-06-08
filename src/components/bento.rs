@@ -15,7 +15,7 @@ pub fn BentoBlock(
     #[prop(optional, into)] class: String,
 ) -> impl IntoView {
     view! {
-        <div class=format!("relative overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/50 p-6 backdrop-blur-sm transition-all hover:border-slate-700/80 hover:bg-slate-900/80 group {}", class)>
+        <div class=format!("relative overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/50 p-6 backdrop-blur-sm transition-all duration-300 bento-scroll-card group {}", class)>
             <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-emerald-400/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <div class="relative z-10 h-full flex flex-col">
                 {children()}

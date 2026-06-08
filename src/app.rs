@@ -27,6 +27,56 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
             </head>
             <body>
                 <App/>
+                <script>
+                    "document.addEventListener('DOMContentLoaded', () => {
+                        const cards = document.querySelectorAll('.bento-scroll-card');
+                        const visibleCards = new Set();
+                        
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    visibleCards.add(entry.target);
+                                } else {
+                                    visibleCards.delete(entry.target);
+                                    entry.target.style.setProperty('--scroll-progress', '0');
+                                }
+                            });
+                        }, {
+                            threshold: 0,
+                            rootMargin: '100px 0px 100px 0px'
+                        });
+
+                        cards.forEach(card => observer.observe(card));
+
+                        let isScrolling = false;
+                        
+                        function updateProgress() {
+                            const viewportHeight = window.innerHeight;
+                            visibleCards.forEach(card => {
+                                const rect = card.getBoundingClientRect();
+                                const startScroll = viewportHeight;
+                                const endScroll = viewportHeight * 0.25;
+                                
+                                let progress = (startScroll - rect.top) / (startScroll - endScroll);
+                                progress = Math.max(0, Math.min(1, progress));
+                                
+                                card.style.setProperty('--scroll-progress', progress.toFixed(3));
+                            });
+                        }
+
+                        setTimeout(updateProgress, 100);
+
+                        window.addEventListener('scroll', () => {
+                            if (!isScrolling) {
+                                window.requestAnimationFrame(() => {
+                                    updateProgress();
+                                    isScrolling = false;
+                                });
+                                isScrolling = true;
+                            }
+                        });
+                    });"
+                </script>
             </body>
         </html>
     }

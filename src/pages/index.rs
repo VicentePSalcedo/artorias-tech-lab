@@ -7,16 +7,27 @@ pub fn HomePage() -> impl IntoView {
     view! {
         <div class="flex flex-col gap-16">
             // Hero Section
-            <section class="text-center py-16 md:py-24">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                    "Engineering "
-                    <span class="animate-shimmer">
-                        "Autonomy"
-                    </span>
-                </h1>
-                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-                    "Elite, custom Rust and TypeScript infrastructure for businesses that refuse to rent their operational capacity."
-                </p>
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
+                <div class="max-w-3xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                        "Engineering "
+                        <br class="md:hidden" />
+                        <span class="animate-shimmer">
+                            "Autonomy"
+                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
+                        "Elite, custom Rust and TypeScript infrastructure for businesses that refuse to rent their operational capacity."
+                    </p>
+                </div>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500 cursor-pointer">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
             </section>
 
             <BentoGrid>
