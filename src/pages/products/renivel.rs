@@ -23,7 +23,7 @@ pub fn RenivelPage() -> impl IntoView {
             </section>
 
             // Problem Section
-            <section class="grid md:grid-cols-2 gap-12 items-center bg-slate-900/30 p-8 rounded-3xl border border-slate-800/50 bento-scroll-card">
+            <section class="grid md:grid-cols-2 gap-12 items-center bg-slate-900/30 p-8 rounded-3xl border border-slate-800/50">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-6">"The Guesswork is Costing You Money."</h2>
                     <p class="text-lg text-slate-400 mb-6">
@@ -56,14 +56,14 @@ pub fn RenivelPage() -> impl IntoView {
                     "RENIVEL isn't a complicated accounting app. It’s a visual tool designed for the job site. We replaced complex spreadsheets with a simple Health Bar—just like the bubble in your level."
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                    <div class="flex items-center gap-4 rounded-xl border border-emerald-900/50 bg-emerald-950/20 p-6 bento-scroll-card">
+                    <div class="flex items-center gap-4 rounded-xl border border-emerald-900/50 bg-emerald-950/20 p-6">
                         <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">"✓"</div>
                         <div class="text-left">
                             <p class="font-bold text-emerald-400">"Green"</p>
                             <p class="text-sm text-slate-400">"You are balanced. Your job is profitable."</p>
                         </div>
                     </div>
-                    <div class="flex items-center gap-4 rounded-xl border border-rose-900/50 bg-rose-950/20 p-6 bento-scroll-card">
+                    <div class="flex items-center gap-4 rounded-xl border border-rose-900/50 bg-rose-950/20 p-6">
                         <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400">"✕"</div>
                         <div class="text-left">
                             <p class="font-bold text-rose-400">"Red"</p>
@@ -77,19 +77,19 @@ pub fn RenivelPage() -> impl IntoView {
             <section>
                 <h2 class="text-3xl font-bold text-slate-100 text-center mb-12">"The Toolbelt for Profit."</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors bento-scroll-card">
+                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
                         <h3 class="text-lg font-bold text-slate-200 mb-2">"Real-Time Health Bar"</h3>
                         <p class="text-sm text-slate-400">"See your P&L instantly. Green means profitable, Red means stop working and fix it."</p>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors bento-scroll-card">
+                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
                         <h3 class="text-lg font-bold text-slate-200 mb-2">"Zero-Training Worker App"</h3>
                         <p class="text-sm text-slate-400">"Field staff can log time and receipts in under 10 seconds. No complex menus."</p>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors bento-scroll-card">
+                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
                         <h3 class="text-lg font-bold text-slate-200 mb-2">"Change Order Defense"</h3>
                         <p class="text-sm text-slate-400">"Never let scope creep kill your margin again. Track every extra request instantly."</p>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors bento-scroll-card">
+                    <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
                         <h3 class="text-lg font-bold text-slate-200 mb-2">"Multi-Property CRM"</h3>
                         <p class="text-sm text-slate-400">"Manage clients with multiple properties (e.g., Main House vs. Rental) effortlessly."</p>
                     </div>
@@ -97,7 +97,7 @@ pub fn RenivelPage() -> impl IntoView {
             </section>
 
             // CTA / Promo
-            <section class="bg-gradient-to-br from-slate-900 to-cyan-950/30 rounded-3xl border border-cyan-900/50 p-12 text-center bento-scroll-card">
+            <section class="bg-gradient-to-br from-slate-900 to-cyan-950/30 rounded-3xl border border-cyan-900/50 p-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-6">"Ready to Level Up?"</h2>
                 <div class="inline-block px-4 py-2 bg-slate-950/50 border border-cyan-800 rounded-lg mb-8">
                     <p class="text-cyan-400 font-mono text-sm">"Use code: EARLYACCESS"</p>
