@@ -31,21 +31,6 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                     "document.addEventListener('DOMContentLoaded', () => {
                         const visibleCards = new Set();
                         const observedCards = new Set();
-                        
-                        const intersectionObserver = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-                                    visibleCards.add(entry.target);
-                                } else {
-                                    visibleCards.delete(entry.target);
-                                    entry.target.style.setProperty('--scroll-progress', '0');
-                                }
-                            });
-                        }, {
-                            threshold: 0,
-                            rootMargin: '100px 0px 100px 0px'
-                        });
-
                         let isScrolling = false;
                         
                         function updateProgress() {
@@ -70,6 +55,25 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                                 card.style.setProperty('--scroll-progress', progress.toFixed(3));
                             });
                         }
+
+                        const intersectionObserver = new IntersectionObserver((entries) => {
+                            let statusChanged = false;
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    visibleCards.add(entry.target);
+                                    statusChanged = true;
+                                } else {
+                                    visibleCards.delete(entry.target);
+                                    entry.target.style.setProperty('--scroll-progress', '0');
+                                }
+                            });
+                            if (statusChanged) {
+                                updateProgress();
+                            }
+                        }, {
+                            threshold: 0,
+                            rootMargin: '100px 0px 100px 0px'
+                        });
 
                         function scanAndObserve() {
                             const cards = document.querySelectorAll('.bento-scroll-card');
