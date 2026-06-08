@@ -68,8 +68,8 @@ pub fn ContactPage() -> impl IntoView {
                                         }
                                     >
                                         <option value="">"General Inquiry"</option>
-                                        <option value="custom-apps">"Custom Web Applications & Platforms"</option>
                                         <option value="digital-foundation">"Digital Foundation Systems"</option>
+                                        <option value="custom-apps">"Custom Web Applications & Platforms"</option>
                                         <option value="infrastructure">"Infrastructure Engineering & Automation"</option>
                                     </select>
                                 </div>
