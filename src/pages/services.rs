@@ -15,7 +15,7 @@ pub fn ServicesPage() -> impl IntoView {
 
             <div class="space-y-8">
                 // Service 1: Custom Web Applications & Platforms
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors bento-scroll-card">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -81,7 +81,7 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
 
                 // Service 2: Digital Foundation Systems
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-emerald-500/50 transition-colors bento-scroll-card">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -147,7 +147,7 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
 
                 // Service 3: Infrastructure Engineering & Automation
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors">
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors bento-scroll-card">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -214,7 +214,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Engagement Parameters / Gatekeeper Section
-            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden font-mono text-sm text-slate-300">
+            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden font-mono text-sm text-slate-300 bento-scroll-card">
                 <div class="border-b border-slate-800 pb-3 mb-6 flex justify-between items-center text-xs text-slate-500">
                     <span>"CONFIG // sys.config"</span>
                     <span class="text-emerald-500">"SYS_STATUS: ACTIVE"</span>
@@ -241,7 +241,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Contact CTA
-            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center">
+            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center bento-scroll-card">
                 <h2 class="text-3xl font-bold text-slate-100 mb-4">"Let's build something extraordinary."</h2>
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
                     "If you are ready to upgrade your business infrastructure or build a custom web application, let's talk. No high-pressure sales, just an honest conversation about what you need."

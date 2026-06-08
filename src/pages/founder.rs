@@ -26,7 +26,7 @@ pub fn FounderPage() -> impl IntoView {
             // The Dual Pitch Grid
             <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
                 // Local Business Pitch
-                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group hover:border-slate-700/80 transition-all">
+                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group hover:border-slate-700/80 transition-all bento-scroll-card">
                     <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-6">
@@ -60,7 +60,7 @@ pub fn FounderPage() -> impl IntoView {
                 </div>
 
                 // Enterprise Pitch
-                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group hover:border-slate-700/80 transition-all">
+                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group hover:border-slate-700/80 transition-all bento-scroll-card">
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-6">
@@ -95,7 +95,7 @@ pub fn FounderPage() -> impl IntoView {
             </section>
 
             // Tech Stack & Capabilities Console
-            <section class="max-w-4xl mx-auto">
+            <section class="max-w-4xl mx-auto bento-scroll-card">
                 <div class="mb-6 text-center">
                     <h3 class="text-2xl font-bold text-slate-100">"Technical Competencies"</h3>
                     <p class="text-slate-400 mt-2">"The toolkit powering Artorias Tech Lab."</p>
