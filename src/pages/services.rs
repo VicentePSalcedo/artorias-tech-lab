@@ -7,13 +7,32 @@ pub fn ServicesPage() -> impl IntoView {
     let (show_infra_specs, set_show_infra_specs) = signal(false);
 
     view! {
-        <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-100 mb-4">"Client Services"</h1>
-                <p class="text-slate-400 text-lg">"High-margin consulting and development packages."</p>
-            </div>
+        <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            // Hero Section
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4 mb-12">
+                <div class="max-w-3xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                        "Client "
+                        <br class="md:hidden" />
+                        <span class="animate-shimmer">
+                            "Services"
+                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
+                        "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
+                    </p>
+                </div>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="flex flex-col gap-12">
                 // Service 1: Custom Web Applications & Platforms
                 <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors bento-scroll-card">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -147,7 +166,7 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
 
                 // Service 3: Infrastructure Engineering & Automation
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors bento-scroll-card lg:col-span-2">
+                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors bento-scroll-card">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                         <svg class="w-24 h-24 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
