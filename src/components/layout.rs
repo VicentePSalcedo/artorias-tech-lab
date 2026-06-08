@@ -11,11 +11,11 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                 <div class="absolute top-[-15%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-cyan-500/25 blur-[120px] ambient-blob-2"></div>
                 
                 // Bottom Symmetrical Emerald Glows
-                <div class="absolute bottom-[-15%] left-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-emerald-500/16 blur-[130px] ambient-blob-2"></div>
-                <div class="absolute bottom-[-15%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-emerald-500/16 blur-[130px] ambient-blob-1"></div>
+                <div class="absolute bottom-[-15%] left-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-emerald-500/[0.16] blur-[130px] ambient-blob-2"></div>
+                <div class="absolute bottom-[-15%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-emerald-500/[0.16] blur-[130px] ambient-blob-1"></div>
                 
                 // Grounding Center Indigo Glow
-                <div class="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full bg-indigo-500/14 blur-[140px] ambient-blob-1"></div>
+                <div class="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full bg-indigo-500/[0.14] blur-[140px] ambient-blob-1"></div>
             </div>
 
             <header class="sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md">
