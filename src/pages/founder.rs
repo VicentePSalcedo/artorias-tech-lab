@@ -15,7 +15,7 @@ pub fn FounderPage() -> impl IntoView {
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
                         "I Build The Engine. "
                         <br class="hidden md:block" />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                        <span class="animate-shimmer">
                             "You Own The Keys."
                         </span>
                     </h1>
