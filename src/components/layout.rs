@@ -9,7 +9,7 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                     <a href="/" class="flex items-center gap-3 font-bold text-xl tracking-tight text-slate-100 hover:text-cyan-400 transition-colors">
                         <img src="/icon-original.png" alt="Artorias Tech Lab Logo" class="h-6 w-6 object-contain" />
                         <div class="flex items-center gap-2">
-                            <span class="text-cyan-400">"Artorias"</span>
+                            <span class="animate-shimmer">"Artorias"</span>
                             "Tech Lab"
                         </div>
                     </a>
