@@ -22,7 +22,7 @@ pub fn ContactPage() -> impl IntoView {
                 <p class="text-slate-400 text-lg">"Provide a few details below and I will contact you directly."</p>
             </div>
 
-            <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
+            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-8 md:p-12 backdrop-blur-sm relative overflow-hidden bento-card no-hover">
                 <div class="absolute inset-0 bg-gradient-to-b from-cyan-950/5 to-transparent"></div>
                 <div class="relative z-10">
                     {move || if submitted.get() {

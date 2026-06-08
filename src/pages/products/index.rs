@@ -9,9 +9,9 @@ pub fn ProductsIndex() -> impl IntoView {
                 <p class="text-slate-400 text-lg">"High-performance SaaS platforms engineered in-house."</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 max-w-2xl mx-auto gap-8">
                 // Renivel Product Card
-                <a href="/products/renivel" class="block border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors bento-scroll-card">
+                <a href="/products/renivel" class="block rounded-2xl border border-slate-800/60 bg-slate-900/50 p-8 backdrop-blur-sm relative overflow-hidden group bento-card">
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
                         <div class="flex items-center justify-between mb-4">
@@ -30,7 +30,7 @@ pub fn ProductsIndex() -> impl IntoView {
                 </a>
 
                 // Future Product Placeholder
-                <div class="block border border-slate-800/40 bg-slate-900/20 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden bento-scroll-card">
+                <div class="block rounded-2xl border border-slate-800/60 bg-slate-900/50 p-8 backdrop-blur-sm relative overflow-hidden bento-card no-hover">
                     <div class="relative z-10 opacity-60">
                         <div class="flex items-center justify-between mb-4">
                             <h2 class="text-2xl font-bold text-slate-400">"Project V2"</h2>
