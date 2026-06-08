@@ -29,10 +29,10 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <App/>
                 <script>
                     "document.addEventListener('DOMContentLoaded', () => {
-                        const cards = document.querySelectorAll('.bento-scroll-card');
                         const visibleCards = new Set();
+                        const observedCards = new Set();
                         
-                        const observer = new IntersectionObserver((entries) => {
+                        const intersectionObserver = new IntersectionObserver((entries) => {
                             entries.forEach(entry => {
                                 if (entry.isIntersecting) {
                                     visibleCards.add(entry.target);
@@ -45,8 +45,6 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                             threshold: 0,
                             rootMargin: '100px 0px 100px 0px'
                         });
-
-                        cards.forEach(card => observer.observe(card));
 
                         let isScrolling = false;
                         
@@ -73,7 +71,41 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                             });
                         }
 
-                        setTimeout(updateProgress, 100);
+                        function scanAndObserve() {
+                            const cards = document.querySelectorAll('.bento-scroll-card');
+                            cards.forEach(card => {
+                                if (!observedCards.has(card)) {
+                                    observedCards.add(card);
+                                    intersectionObserver.observe(card);
+                                }
+                            });
+                            updateProgress();
+                        }
+
+                        const mutationObserver = new MutationObserver((mutations) => {
+                            let hasNewCards = false;
+                            mutations.forEach(mutation => {
+                                mutation.addedNodes.forEach(node => {
+                                    if (node.nodeType === Node.ELEMENT_NODE) {
+                                        if (node.classList && node.classList.contains('bento-scroll-card')) {
+                                            hasNewCards = true;
+                                        } else if (node.querySelector && node.querySelector('.bento-scroll-card')) {
+                                            hasNewCards = true;
+                                        }
+                                    }
+                                });
+                            });
+                            if (hasNewCards) {
+                                scanAndObserve();
+                            }
+                        });
+
+                        mutationObserver.observe(document.body, {
+                            childList: true,
+                            subtree: true
+                        });
+
+                        scanAndObserve();
 
                         window.addEventListener('scroll', () => {
                             if (!isScrolling) {
