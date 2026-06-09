@@ -5,39 +5,47 @@ use crate::components::terminal::TerminalMock;
 pub fn FounderPage() -> impl IntoView {
     view! {
         <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            // Hero Section
-            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4 mb-12">
-                <div class="max-w-4xl mx-auto flex flex-col items-center">
-                    <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] mb-6" />
-                    <div class="inline-block px-4 py-1.5 bg-emerald-950/50 border border-emerald-800/50 rounded-full text-sm text-emerald-400 font-mono mb-8 shadow-[0_0_15px_rgba(52,211,153,0.1)]">
-                        "whoami // Vicente - Elite Engineering. Zero Bureaucracy."
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                        "I Build The Engine. "
-                        <br class="hidden md:block" />
-                        <span class="animate-shimmer">
-                            "You Own The Keys."
-                        </span>
-                    </h1>
-                    <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-                        "Artorias Tech Lab doesn't have an account management team, a sales department, or a bloated corporate hierarchy. You work directly with a full-stack digital architect who designs, writes, and deploys every single line of code and infrastructure."
-                    </p>
+            // Header Section
+            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-900/50 text-rose-400 text-sm font-mono mb-8">
+                    <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+                    "MODULE: FOUNDER"
                 </div>
-                
-                // Animated Scroll Indicator
-                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500">
-                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                    "I Build The " <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-indigo-400">"Engine"</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
+                    "Elite engineering without the bureaucratic overhead."
+                </p>
+            </div>
+
+            // About Me Profile Card
+            <section class="mb-12">
+                <div class="border border-slate-800/80 bg-slate-900/90 rounded-3xl p-8 md:p-12 relative overflow-hidden bento-card bento-scroll-card">
+                    <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8 relative z-10">
+                        <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] flex-shrink-0" />
+                        <div>
+                            <div class="flex flex-col md:flex-row items-center gap-3 mb-6">
+                                <h2 class="text-3xl font-bold text-slate-100">"Vicente"</h2>
+                                <span class="px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-emerald-400 text-xs font-mono">
+                                    "whoami // Chief Architect"
+                                </span>
+                            </div>
+                            <p class="text-slate-300 leading-relaxed mb-4 text-lg">
+                                "Artorias Tech Lab doesn't have an account management team, a sales department, or a bloated corporate hierarchy. You work directly with a full-stack digital architect who designs, writes, and deploys every single line of code and infrastructure."
+                            </p>
+                            <p class="text-slate-300 leading-relaxed text-lg">
+                                "When you hire me, you get the absolute guarantee that your keys, your hardware, and your digital assets belong to you—no vendor lock-in, no outsourcing."
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             // The Dual Pitch Grid
             <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
                 // Local Business Pitch
-                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group bento-card">
-                    <div class="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="border border-slate-800/80 bg-slate-900/90 rounded-3xl p-8 md:p-12 relative overflow-hidden bento-card bento-scroll-card">
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="h-12 w-12 rounded-xl bg-rose-950/50 border border-rose-900 flex items-center justify-center text-rose-400">
@@ -70,8 +78,7 @@ pub fn FounderPage() -> impl IntoView {
                 </div>
 
                 // Enterprise Pitch
-                <div class="border border-slate-800/80 bg-slate-900/40 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group bento-card">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="border border-slate-800/80 bg-slate-900/90 rounded-3xl p-8 md:p-12 relative overflow-hidden bento-card bento-scroll-card">
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="h-12 w-12 rounded-xl bg-cyan-950/50 border border-cyan-800/50 flex items-center justify-center text-cyan-400">
@@ -82,14 +89,14 @@ pub fn FounderPage() -> impl IntoView {
                             <h2 class="text-2xl font-bold text-slate-100">"For Enterprise Consulting"</h2>
                         </div>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            "Look at the infrastructure behind Renivel. I architect highly scalable Next.js and NestJS platforms, write high-performance Rust services, manage secure AWS cloud pipelines, and can solve your most complex backend automation bottlenecks without hallucinating."
+                            "Look at the infrastructure behind Renivel. I architect highly scalable Next.js and NestJS platforms, write high-performance native services, manage secure AWS cloud pipelines, and can solve your most complex backend automation bottlenecks without hallucinating."
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <span class="text-cyan-400 mt-1">"→"</span>
                                 <div>
                                     <h4 class="font-bold text-slate-200">"Full-Stack Ecosystems"</h4>
-                                    <p class="text-sm text-slate-400">"End-to-end TypeScript architectures with Next.js, NestJS, and PostgreSQL, alongside memory-safe Rust backends."</p>
+                                    <p class="text-sm text-slate-400">"End-to-end TypeScript architectures with Next.js, NestJS, and PostgreSQL, alongside memory-safe secure backends."</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
@@ -105,7 +112,7 @@ pub fn FounderPage() -> impl IntoView {
             </section>
 
             // Tech Stack & Capabilities Console
-            <section class="max-w-4xl mx-auto bento-card no-hover">
+            <section class="max-w-4xl mx-auto bento-card no-hover bento-scroll-card">
                 <div class="mb-6 text-center">
                     <h3 class="text-2xl font-bold text-slate-100">"Technical Competencies"</h3>
                     <p class="text-slate-400 mt-2">"The toolkit powering Artorias Tech Lab."</p>
@@ -113,7 +120,7 @@ pub fn FounderPage() -> impl IntoView {
                 <TerminalMock 
                     command="cat capabilities.json | jq" 
                     output="{
-  \"languages\": [\"TypeScript\", \"Rust\", \"SQL\", \"Nushell\"],
+  \"languages\": [\"TypeScript\", \"Python\", \"SQL\", \"Nushell\"],
   \"frameworks\": [\"Next.js\", \"NestJS\", \"Leptos\", \"React\"],
   \"cloud_infrastructure\": {
     \"provider\": \"AWS (IAM, ECS, RDS, Secrets Manager)\",

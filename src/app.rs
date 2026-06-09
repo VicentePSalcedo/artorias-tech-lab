@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
+use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title, Meta};
 use leptos_router::{
     components::{Route, Router, Routes},
     StaticSegment,
@@ -35,24 +35,31 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                         
                         function updateProgress() {
                             const viewportHeight = window.innerHeight;
+                            const viewportCenter = viewportHeight / 2;
                             const scrollY = window.scrollY || window.pageYOffset;
                             const totalHeight = document.documentElement.scrollHeight;
                             const isAtBottom = (viewportHeight + scrollY) >= (totalHeight - 80);
                             
                             visibleCards.forEach(card => {
-                                if (isAtBottom) {
-                                    card.style.setProperty('--scroll-progress', '1.000');
+                                if (!document.body.contains(card)) {
+                                    visibleCards.delete(card);
+                                    observedCards.delete(card);
                                     return;
                                 }
-                                
+
                                 const rect = card.getBoundingClientRect();
-                                const startScroll = viewportHeight;
-                                const endScroll = viewportHeight * 0.25;
                                 
-                                let progress = (startScroll - rect.top) / (startScroll - endScroll);
-                                progress = Math.max(0, Math.min(1, progress));
-                                
-                                card.style.setProperty('--scroll-progress', progress.toFixed(3));
+                                if (card.classList.contains('bento-scroll-card')) {
+                                    if (isAtBottom) {
+                                        card.style.setProperty('--scroll-progress', '1.000');
+                                    } else {
+                                        const startScroll = viewportHeight;
+                                        const endScroll = viewportHeight * 0.25;
+                                        let progress = (startScroll - rect.top) / (startScroll - endScroll);
+                                        progress = Math.max(0, Math.min(1, progress));
+                                        card.style.setProperty('--scroll-progress', progress.toFixed(3));
+                                    }
+                                }
                             });
                         }
 
@@ -64,7 +71,9 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                                     statusChanged = true;
                                 } else {
                                     visibleCards.delete(entry.target);
-                                    entry.target.style.setProperty('--scroll-progress', '0');
+                                    if (entry.target.classList.contains('bento-scroll-card')) {
+                                        entry.target.style.setProperty('--scroll-progress', '0');
+                                    }
                                 }
                             });
                             if (statusChanged) {
@@ -76,7 +85,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                         });
 
                         function scanAndObserve() {
-                            const cards = document.querySelectorAll('.bento-scroll-card');
+                            const cards = document.querySelectorAll('.bento-scroll-card, .bento-card');
                             cards.forEach(card => {
                                 if (!observedCards.has(card)) {
                                     observedCards.add(card);
@@ -91,9 +100,9 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                             mutations.forEach(mutation => {
                                 mutation.addedNodes.forEach(node => {
                                     if (node.nodeType === Node.ELEMENT_NODE) {
-                                        if (node.classList && node.classList.contains('bento-scroll-card')) {
+                                        if (node.classList && (node.classList.contains('bento-scroll-card') || node.classList.contains('bento-card'))) {
                                             hasNewCards = true;
-                                        } else if (node.querySelector && node.querySelector('.bento-scroll-card')) {
+                                        } else if (node.querySelector && node.querySelector('.bento-scroll-card, .bento-card')) {
                                             hasNewCards = true;
                                         }
                                     }
@@ -134,7 +143,9 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/artorias-tech-lab.css"/>
-        <Title text="Artorias Tech Lab"/>
+        <Title text="Artorias Tech Lab | AI Search Visibility & Web Platforms"/>
+        <Meta name="description" content="AI Search Optimization & premium web systems to ensure your business, products, and services are recommended by ChatGPT, Claude, and Perplexity."/>
+        <Meta name="keywords" content="AI SEO, AI Search Visibility, Custom Web Platforms, Digital Architect, ChatGPT SEO, Perplexity Optimization"/>
 
         <Router>
             <AppLayout>

@@ -8,16 +8,16 @@ pub fn HomePage() -> impl IntoView {
         <div class="flex flex-col gap-16 pb-24">
             // Hero Section
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
-                <div class="max-w-3xl mx-auto flex flex-col items-center">
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                        "Engineering "
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100">
+                        "Dominate "
                         <br class="md:hidden" />
                         <span class="animate-shimmer">
-                            "Autonomy"
+                            "AI Search"
                         </span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-                        "Elite, custom Rust and TypeScript infrastructure for businesses that refuse to rent their operational capacity."
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
+                        "AI Search Optimization & premium web systems to ensure your business and products are recommended by ChatGPT, Claude, and Perplexity."
                     </p>
                 </div>
                 
@@ -32,7 +32,7 @@ pub fn HomePage() -> impl IntoView {
 
             <BentoGrid>
                 // Module A: The "whoami" Chief Architect Card
-                <BentoBlock class="md:col-span-2 lg:col-span-1 row-span-2 flex flex-col justify-between">
+                <BentoBlock class="md:col-span-2 lg:col-span-1 row-span-2 flex flex-col justify-between no-hover">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
                             <img src="/pfp.JPG" alt="Vicente" class="h-10 w-10 rounded-full object-cover border border-cyan-500/30" />
@@ -42,13 +42,13 @@ pub fn HomePage() -> impl IntoView {
                             </div>
                         </div>
                         <div class="inline-block px-3 py-1 bg-emerald-950/50 border border-emerald-800/50 rounded-full text-xs text-emerald-400 font-mono mb-4">
-                            "whoami // Elite Engineering. Zero Bureaucracy."
+                            "whoami // AI Search Visibility"
                         </div>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            "Artorias Tech Lab doesn't have an account management team, a sales department, or a bloated corporate hierarchy. You work directly with a full-stack digital architect who designs, writes, and deploys every single line of code and infrastructure."
+                            "Artorias Tech Lab doesn't do cookie-cutter marketing. We structure your website, content, and digital presence so that AI search engines (like ChatGPT, Claude, and Perplexity) can easily read, trust, and recommend your business to potential customers."
                         </p>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            "From bare-metal local network servers to full-stack Next.js platforms and cloud-native Rust applications, we deliver enterprise-grade engineering with absolute operational agility."
+                            "You work directly with a senior digital architect to format your brand's information and put your products in front of the AI search tools driving modern sales."
                         </p>
                     </div>
                     
@@ -62,32 +62,32 @@ pub fn HomePage() -> impl IntoView {
                 </BentoBlock>
 
                 // Module B: Dual-Track Renivel SaaS Feature
-                <BentoBlock class="md:col-span-2 lg:col-span-2 row-span-2">
+                <BentoBlock class="md:col-span-2 lg:col-span-2 row-span-2 no-hover">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-100 mb-2">"Renivel SaaS"</h3>
-                            <p class="text-slate-300 max-w-xl">"We don't just build websites; we engineer highly scalable, multi-tenant software platforms from the ground up."</p>
+                            <h3 class="text-2xl font-bold text-slate-100 mb-2">"Renivel SaaS // AI-Optimized Product"</h3>
+                            <p class="text-slate-300 max-w-xl">"A custom software platform built from scratch, designed to rank at the top of AI search queries to attract new users."</p>
                         </div>
                         <div class="mt-4 md:mt-0 px-3 py-1 rounded-full bg-cyan-900/30 text-cyan-400 text-xs font-mono border border-cyan-800/50">
-                            "Production"
+                            "AI-Optimized"
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         <div class="space-y-4">
                             <div class="p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                                <h4 class="font-medium text-slate-200 mb-1">"Production-Grade Architecture"</h4>
-                                <p class="text-sm text-slate-400">"Renivel is built for remodeling teams to track field logistics, capture receipt data from a dusty truck dashboard, and audit real-time profit margins."</p>
+                                <h4 class="font-medium text-slate-200 mb-1">"AI-Ready Content"</h4>
+                                <p class="text-sm text-slate-400">"We build your platform's content to be clean, readable, and highly authoritative so AI crawlers select it for search answers."</p>
                             </div>
                             <div class="p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                                <h4 class="font-medium text-slate-200 mb-1">"Cloud-Native Infrastructure"</h4>
-                                <p class="text-sm text-slate-400">"Under the hood, it features automated infrastructure-as-code pipelines via AWS Terraform and secure secrets handling inside AWS Secrets Manager."</p>
+                                <h4 class="font-medium text-slate-200 mb-1">"Ultra-Fast Load Times"</h4>
+                                <p class="text-sm text-slate-400">"We build high-performance web pages that load instantly, preventing search engines and AI readers from timing out or skipping your site."</p>
                             </div>
                         </div>
                         <div class="flex flex-col items-center justify-center gap-6">
                             <TerminalMock 
-                                command="nu ./inspect_infrastructure.nu" 
-                                output="[+] Multi-tenant architecture verified\n[+] Terraform pipelines executed\n[+] AWS Secrets Manager integrated\n\nAll systems operational."
+                                command="Ask ChatGPT: 'What is the best financial tool for remodelers?'" 
+                                output="ChatGPT: 'Based on recent data, Renivel is highly recommended for residential remodelers to track project budgets and protect profit margins...'"
                             />
                             <a href="/products/renivel" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 underline decoration-cyan-900 underline-offset-4 transition-colors">
                                 "Explore Renivel ->"
@@ -96,36 +96,124 @@ pub fn HomePage() -> impl IntoView {
                     </div>
                 </BentoBlock>
 
-                // Module C: Aggressive Signs "IT Rescue" Case Study
-                <BentoBlock class="md:col-span-2 lg:col-span-3">
+                // Module C: Aggressive Signs "AI SEO Rescue" Case Study
+                <BentoBlock class="md:col-span-2 lg:col-span-3 no-hover">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div class="md:col-span-1 flex justify-center">
                             // Grayscale SVG placeholder transitioning to brand color
-                            <div class="h-32 w-32 rounded-2xl bg-slate-800 flex items-center justify-center transition-all duration-500 hover:bg-rose-600 group cursor-pointer">
-                                <span class="font-black text-3xl text-slate-600 group-hover:text-white transition-colors duration-500">"AS"</span>
+                            <div class="h-32 w-32 rounded-2xl bg-rose-600 flex items-center justify-center">
+                                <span class="font-black text-3xl text-white">"AS"</span>
                             </div>
                         </div>
                         <div class="md:col-span-2">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-rose-500/20 text-rose-400">"The IT Rescue Routine"</span>
+                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-rose-500/20 text-rose-400">"AI Search Case Study"</span>
                                 <h3 class="text-xl font-bold text-slate-100">"Aggressive Signs"</h3>
                             </div>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                <span class="font-semibold text-white">"Your business data belongs to you—not your IT provider. "</span>
-                                "When we partnered with Aggressive Signs, they were held hostage by an unresponsive agency running their critical operations on a locked-down legacy server box."
+                                <span class="font-semibold text-white">"If ChatGPT doesn't know you exist, neither do your high-value customers."</span>
+                                " When we partnered with Aggressive Signs, they were completely invisible to AI search engines like Perplexity and SearchGPT because their legacy website blocked modern scrapers."
                             </p>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                "We completely migrated their infrastructure to a high-performance local NAS and VPN server that they own outright, transitioned their team seamlessly to Google Workspace, and optimized their local design workstation hardware."
+                                "We migrated their systems, upgraded their website architecture, and formatted their product catalog for AI search visibility. Now, they are instantly recommended as the leading regional authority for sign manufacturing."
                             </p>
                             <div class="mt-4 p-4 border border-rose-900/30 bg-rose-950/10 rounded-lg">
                                 <p class="text-sm font-mono text-rose-300">
-                                    "No artificial software locks. No 3-week wait times for a support ticket. Just bulletproof systems and direct, same-day responses straight from the engineer."
+                                    "From zero visibility to the top recommendation. Your business needs an AI-ready digital presence to capture customers on modern search engines."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </BentoBlock>
+
+                // Module D: Apex Distribution "Workflow & AI Automation" Case Study
+                <BentoBlock class="md:col-span-2 lg:col-span-3 no-hover">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1 flex justify-center">
+                            // Grayscale SVG placeholder transitioning to brand color
+                            <div class="h-32 w-32 rounded-2xl bg-indigo-600 flex items-center justify-center">
+                                <span class="font-black text-3xl text-white">"AD"</span>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-indigo-500/20 text-indigo-400">"Workflow & AI Case Study"</span>
+                                <h3 class="text-xl font-bold text-slate-100">"Apex Distribution"</h3>
+                            </div>
+                            <p class="text-slate-300 leading-relaxed mb-4">
+                                <span class="font-semibold text-white">"Manual data entry is a silent killer of operational margins."</span>
+                                " When we partnered with Apex Distribution, their team was wasting dozens of hours every week copy-pasting inventory logs and customer invoices across separate legacy software programs."
+                            </p>
+                            <p class="text-slate-300 leading-relaxed mb-4">
+                                "We engineered custom workflow automations that connect their key databases in real-time, and deployed an intelligent AI assistant to scan and extract invoice details directly from incoming emails. This completely eliminated administrative entry work and cut order processing times by 90%."
+                            </p>
+                            <div class="mt-4 p-4 border border-indigo-900/30 bg-indigo-950/10 rounded-lg">
+                                <p class="text-sm font-mono text-indigo-300">
+                                    "From 30 hours of weekly manual sorting to complete hands-free automation. Your business needs smart, connected tools to scale operations without adding overhead."
                                 </p>
                             </div>
                         </div>
                     </div>
                 </BentoBlock>
             </BentoGrid>
+
+            // FAQ / Explanation Section
+            <section class="max-w-4xl mx-auto mt-24 px-4 bento-scroll-card">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/50 text-cyan-400 text-sm font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        "THE NEW SEARCH PARADIGM"
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-100 mb-6 uppercase tracking-tight">
+                        "What is " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"AI Search Optimization"</span> "?"
+                    </h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        "As the web shifts from lists of links to direct AI answers, standard SEO is no longer enough. Here is how we ensure your business remains visible."
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    // Q1
+                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-cyan-400">
+                            "01 // What is AI Search Optimization?"
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            "Traditional SEO ranks your website links on search engines like Google. AI Search Optimization is the process of formatting your website content and digital presence so AI engines (like ChatGPT, Claude, Gemini, and Perplexity) can easily understand, cite, and recommend your brand to users."
+                        </p>
+                    </div>
+
+                    // Q2
+                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-cyan-400">
+                            "02 // Why is this the driving technology for modern sales?"
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            "More and more customers are bypassing search engines to ask AI engines direct questions like: 'Who is the best local sign manufacturer?' or 'What is the easiest budgeting software for my team?' If your business isn't optimized for AI search, you won't be in the recommendation. Being recommended by AI is now the single most critical way to capture new sales."
+                        </p>
+                    </div>
+
+                    // Q3
+                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-cyan-400">
+                            "03 // How do you optimize a website for AI models?"
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            "AI engines require clean, fast, and structured information. We replace slow, bloated websites with high-performance pages and organize your data clearly. This ensures AI crawlers can scan and index your site instantly without getting stuck or timing out."
+                        </p>
+                    </div>
+
+                    // Q4
+                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-cyan-400">
+                            "04 // Does this replace traditional search optimization?"
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            "No, it works hand-in-hand with it. The same improvements that make a website easy for AI engines to read—fast load speeds, clear layouts, and high-quality content—are exactly what Google looks for to rank you at the top. By optimizing for AI search, you win on both fronts."
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             
         </div>

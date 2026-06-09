@@ -17,12 +17,20 @@ pub fn ContactPage() -> impl IntoView {
 
     view! {
         <div class="max-w-2xl mx-auto py-12">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-slate-100 mb-4 font-mono">"Request Consultation"</h1>
-                <p class="text-slate-400 text-lg">"Provide a few details below and I will contact you directly."</p>
+            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/50 text-cyan-400 text-sm font-mono mb-8">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    "MODULE: COMM_LINK"
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                    "Request " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Consultation"</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
+                    "Provide a few details below and I will contact you directly."
+                </p>
             </div>
 
-            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-8 md:p-12 backdrop-blur-sm relative overflow-hidden bento-card no-hover">
+            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/90 p-8 md:p-12 relative overflow-hidden bento-card no-hover bento-scroll-card">
                 <div class="absolute inset-0 bg-gradient-to-b from-cyan-950/5 to-transparent"></div>
                 <div class="relative z-10">
                     {move || if submitted.get() {
@@ -53,9 +61,30 @@ pub fn ContactPage() -> impl IntoView {
                                     <input 
                                         type="email" 
                                         required 
-                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-220 transition-colors" 
+                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors" 
                                         placeholder="you@company.com"
                                     />
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-300 mb-1">"Phone Number (Optional)"</label>
+                                        <input 
+                                            type="tel" 
+                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors" 
+                                            placeholder="(555) 000-0000"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-300 mb-1">"Preferred Contact Method"</label>
+                                        <select 
+                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors cursor-pointer"
+                                        >
+                                            <option value="email">"Email"</option>
+                                            <option value="phone">"Phone Call"</option>
+                                            <option value="text">"Text Message"</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>

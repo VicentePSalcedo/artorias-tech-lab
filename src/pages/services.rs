@@ -9,37 +9,48 @@ pub fn ServicesPage() -> impl IntoView {
     view! {
         <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             // Header Section
-            <div class="text-center mb-16">
-                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    <span class="animate-shimmer">"Client Services"</span>
+            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-900/50 text-emerald-400 text-sm font-mono mb-8">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    "MODULE: SERVICES"
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                    "Client " <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">"Services"</span>
                 </h1>
-                <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
                     "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
                 </p>
             </div>
 
             <div class="flex flex-col gap-12">
                 // Service 1: Digital Foundation Systems (Originally Service 2)
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div 
+                    class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out bento-scroll-card"
+                    class=("-translate-y-2", move || show_foundation_specs.get())
+                    class=("scale-[1.02]", move || show_foundation_specs.get())
+                    class=("shadow-2xl", move || show_foundation_specs.get())
+                    class=("shadow-emerald-500/20", move || show_foundation_specs.get())
+                    class=("border-emerald-500/50", move || show_foundation_specs.get())
+                    class=("z-20", move || show_foundation_specs.get())
+                >
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
                     </div>
                     <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <div class="mb-2">
                             <h2 class="text-2xl font-bold text-slate-100">"Digital Foundation Systems"</h2>
-                            <div class="mt-2 md:mt-0 text-emerald-400 font-mono font-bold text-xl">"$2,500+"</div>
                         </div>
-                        <p class="text-xs font-mono text-emerald-500/90 mb-4">
+                        <p class="text-sm font-mono text-emerald-400 mb-4">
                             "// For businesses that need a high-performance web presence that actually drives revenue."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "No generic WordPress templates or bloated page builders. We build custom, hand-coded marketing engines that load in milliseconds and dominate search results. Your site will be entirely secure, completely self-owned, and fully optimized to turn traffic into clients."
+                            "No generic WordPress templates or bloated page builders. We build custom, hand-coded marketing engines that load in milliseconds, dominate Google rankings, and are structured specifically for LLM search queries (ChatGPT, Perplexity, SearchGPT). Your site will be entirely secure, completely self-owned, and fully optimized to turn traffic into clients."
                         </p>
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                             <ul class="space-y-2 text-slate-400">
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom, Hand-Coded Website & Search Engine Optimization (SEO)"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom Websites & Generative Engine Optimization (GEO)"</li>
                                 <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "High-Converting Landing Pages"</li>
                                 <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Built-in Contact Forms & Customer Analytics"</li>
                             </ul>
@@ -63,21 +74,21 @@ pub fn ServicesPage() -> impl IntoView {
                         {move || show_foundation_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-emerald-400 font-bold">"// CORE ENGINE"</span>
+                                    <span class="text-emerald-400 font-bold">"// PERFORMANCE FOUNDATION"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Markup: Semantic HTML5 & CSS3 Variables"</div>
-                                        <div>"• Rendering: Server-Side Pre-rendering (SSR / SSG)"</div>
-                                        <div>"• Styles: Vanilla CSS / SCSS custom architecture"</div>
-                                        <div>"• Metrics: Target 100/100 Lighthouse performance"</div>
+                                        <div>"• Core: Clean, custom layouts (no bloated site templates)"</div>
+                                        <div>"• Speed: Optimized for sub-second page loads"</div>
+                                        <div>"• Styles: Bespoke styling for unique brand design"</div>
+                                        <div>"• Standard: Built to achieve maximum performance scores"</div>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="text-emerald-400 font-bold">"// DISCOVERY & METRICS"</span>
+                                    <span class="text-emerald-400 font-bold">"// AI READY & ANALYTICS"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Full SEO Schema markup (JSON-LD structured data)"</div>
-                                        <div>"• Fully responsive mobile-first optimization"</div>
-                                        <div>"• Privacy-focused custom analytics (Plausible / Google)"</div>
-                                        <div>"• Sub-100ms First Contentful Paint (FCP)"</div>
+                                        <div>"• Discovery: Optimized for ChatGPT & Perplexity crawl patterns"</div>
+                                        <div>"• Design: Mobile-first layout for all screen sizes"</div>
+                                        <div>"• Traffic: Custom privacy-friendly client visitor analytics"</div>
+                                        <div>"• Optimization: Instant visual loading for users"</div>
                                     </div>
                                 </div>
                             </div>
@@ -86,22 +97,29 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
 
                 // Service 2: Custom Web Applications & Platforms (Originally Service 1)
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div 
+                    class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out"
+                    class=("-translate-y-2", move || show_apps_specs.get())
+                    class=("scale-[1.02]", move || show_apps_specs.get())
+                    class=("shadow-2xl", move || show_apps_specs.get())
+                    class=("shadow-cyan-500/20", move || show_apps_specs.get())
+                    class=("border-cyan-500/50", move || show_apps_specs.get())
+                    class=("z-20", move || show_apps_specs.get())
+                >
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                     </div>
                     <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <div class="mb-2">
                             <h2 class="text-2xl font-bold text-slate-100">"Custom Web Applications & Platforms"</h2>
-                            <div class="mt-2 md:mt-0 text-cyan-400 font-mono font-bold text-xl">"$5,000+"</div>
                         </div>
-                        <p class="text-xs font-mono text-cyan-500/90 mb-4">
+                        <p class="text-sm font-mono text-cyan-400 mb-4">
                             "// For businesses that have outgrown off-the-shelf software and need a tailored digital asset."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "We engineer bespoke, production-ready web platforms, client portals, and internal tools built to solve specific operational bottlenecks. Leveraging type-safe, ultra-stable Rust architectures, we build software that scales infinitely, loads instantly, and runs without mystery crashes."
+                            "We engineer bespoke, production-ready web platforms, client portals, and internal tools built to solve specific operational bottlenecks. Leveraging type-safe, ultra-stable software architectures, we build software that scales infinitely, loads instantly, and runs without mystery crashes."
                         </p>
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                             <ul class="space-y-2 text-slate-400">
@@ -129,21 +147,21 @@ pub fn ServicesPage() -> impl IntoView {
                         {move || show_apps_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-cyan-400 font-bold">"// STACK COMPONENTS"</span>
+                                    <span class="text-cyan-400 font-bold">"// CORE CAPABILITIES"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Language: Rust (Type-safe memory safety)"</div>
-                                        <div>"• Frontend: Leptos (SSR & WASM Hydration)"</div>
-                                        <div>"• API Gateway: Axum Web Framework"</div>
-                                        <div>"• Database: PostgreSQL / AWS Aurora RDS"</div>
+                                        <div>"• Backend: Ultra-reliable and secure database systems"</div>
+                                        <div>"• Interface: High-speed interactive views"</div>
+                                        <div>"• Connections: Secure, fast web link API channels"</div>
+                                        <div>"• Database: Dedicated secure data storage vault"</div>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="text-cyan-400 font-bold">"// OPERATIONS & DEPLOYMENT"</span>
+                                    <span class="text-cyan-400 font-bold">"// DEPLOYMENT & MAINTENANCE"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Secure containerization using Docker & AWS ECS"</div>
-                                        <div>"• Automated Git-triggered CI/CD pipelines"</div>
-                                        <div>"• AWS IAM role-based least privilege security"</div>
-                                        <div>"• Secure credential management with Secrets Manager"</div>
+                                        <div>"• Hosting: Secure, isolated cloud servers"</div>
+                                        <div>"• Updates: Automated updates with zero downtime"</div>
+                                        <div>"• Security: Strict cloud access permissions"</div>
+                                        <div>"• Credentials: Fully encrypted security key storage"</div>
                                     </div>
                                 </div>
                             </div>
@@ -152,18 +170,25 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
 
                 // Service 3: Infrastructure Engineering & Automation
-                <div class="border border-slate-800/80 bg-slate-900/50 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group hover:border-rose-500/50 transition-colors">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div 
+                    class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out bento-scroll-card"
+                    class=("-translate-y-2", move || show_infra_specs.get())
+                    class=("scale-[1.02]", move || show_infra_specs.get())
+                    class=("shadow-2xl", move || show_infra_specs.get())
+                    class=("shadow-rose-500/20", move || show_infra_specs.get())
+                    class=("border-rose-500/50", move || show_infra_specs.get())
+                    class=("z-20", move || show_infra_specs.get())
+                >
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
                     <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <div class="mb-2">
                             <h2 class="text-2xl font-bold text-slate-100">"Infrastructure Engineering & Automation"</h2>
-                            <div class="mt-2 md:mt-0 text-rose-400 font-mono font-bold text-xl">"Monthly Retainer"</div>
                         </div>
-                        <p class="text-xs font-mono text-rose-500/90 mb-4">
+                        <p class="text-sm font-mono text-rose-400 mb-4">
                             "// For companies looking to own their data, secure their network, and automate operations."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
@@ -195,21 +220,21 @@ pub fn ServicesPage() -> impl IntoView {
                         {move || show_infra_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-rose-400 font-bold">"// HARDWARE & NETWORK"</span>
+                                    <span class="text-rose-400 font-bold">"// NETWORK HARDWARE"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Hardware: Custom Supermicro / Bare-metal"</div>
-                                        <div>"• OS / File System: TrueNAS Scale (ZFS RAID-Z)"</div>
-                                        <div>"• Networking: VLAN segmentation & routing"</div>
-                                        <div>"• Remote Access: WireGuard VPN / Cloudflare Tunnels"</div>
+                                        <div>"• Hardware: Custom physical server installation"</div>
+                                        <div>"• System: Secure, redundant local storage file share"</div>
+                                        <div>"• Network: Private, segmented business network"</div>
+                                        <div>"• Remote Access: Secure private network channels"</div>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="text-rose-400 font-bold">"// SYSTEM OPERATIONS"</span>
+                                    <span class="text-rose-400 font-bold">"// SYSTEM AUTOMATIONS"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Automated 3-2-1 backup rotation scheme"</div>
-                                        <div>"• API Automations via Python, Bash & Nushell scripts"</div>
-                                        <div>"• Google Workspace OAuth & IAM security auditing"</div>
-                                        <div>"• Custom Webhook triggers (Slack, Discord)"</div>
+                                        <div>"• Backup: Automated multi-location file backup rotation"</div>
+                                        <div>"• Scripts: Custom integration scripts to link your systems"</div>
+                                        <div>"• Audit: Google Workspace security permission reviews"</div>
+                                        <div>"• Alerts: Real-time team notifications via chat/email"</div>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +244,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Engagement Parameters / Gatekeeper Section
-            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden font-mono text-sm text-slate-300">
+            <div class="mt-16 border border-slate-800/80 bg-slate-950 rounded-2xl p-8 relative overflow-hidden font-mono text-sm text-slate-300 bento-scroll-card">
                 <div class="border-b border-slate-800 pb-3 mb-6 flex justify-between items-center text-xs text-slate-500">
                     <span>"CONFIG // sys.config"</span>
                     <span class="text-emerald-500">"SYS_STATUS: ACTIVE"</span>
@@ -246,7 +271,7 @@ pub fn ServicesPage() -> impl IntoView {
             </div>
 
             // Contact CTA
-            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center">
+            <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center bento-scroll-card">
                 <h2 class="text-3xl font-bold text-slate-100 mb-4">"Let's build something extraordinary."</h2>
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
                     "If you are ready to upgrade your business infrastructure or build a custom web application, let's talk. No high-pressure sales, just an honest conversation about what you need."

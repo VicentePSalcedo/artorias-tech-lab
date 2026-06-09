@@ -59,30 +59,14 @@ body {
               border-color 0.3s ease,
               background-color 0.3s ease,
               box-shadow 0.3s ease;
-              
-  &:not(.no-hover):hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    border-color: rgba(34, 211, 238, 0.4) !important;
-    background-color: rgba(15, 23, 42, 0.8) !important;
-    box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.15);
-    z-index: 20;
-  }
 }
 
 .bento-scroll-card {
   @extend .bento-card;
   opacity: var(--scroll-progress, 0);
   transform: scale(calc(0.93 + (0.07 * var(--scroll-progress, 0)))) translateY(calc(32px * (1 - var(--scroll-progress, 0))));
-  filter: blur(calc(8px * (1 - var(--scroll-progress, 0))));
-  will-change: transform, opacity, filter;
   transition: transform 0.15s ease-out, 
-              opacity 0.15s ease-out, 
-              filter 0.15s ease-out;
-  
-  &:not(.no-hover):hover {
-    filter: blur(0px) !important;
-    opacity: 1 !important;
-  }
+              opacity 0.15s ease-out;
 }
 
 @keyframes scrollCue {
@@ -118,12 +102,10 @@ body {
 
 .ambient-blob-1 {
   animation: ambientDrift 35s ease-in-out infinite;
-  will-change: transform;
 }
 
 .ambient-blob-2 {
   animation: ambientDrift 45s ease-in-out infinite alternate;
-  will-change: transform;
 }
 
 .bg-grid-pattern {
