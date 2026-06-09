@@ -46,7 +46,7 @@ pub async fn send_contact_email(
         let client = reqwest::Client::new();
         let resend_req = ResendEmailRequest {
             from: "Artorias Tech Lab Form <website@artoriastechlab.com>".to_string(),
-            to: vec!["vicentepsalcedo@gmail.com".to_string()],
+            to: vec!["vicentesalcedo@artoriastechlab.com".to_string()],
             subject: format!("New Inquiry: {}", service),
             html: html_content,
         };
