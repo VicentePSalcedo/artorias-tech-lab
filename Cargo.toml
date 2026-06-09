@@ -17,6 +17,9 @@ tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
 wasm-bindgen = { version = "0.2.106", optional = true }
 chrono = "0.4.45"
 
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"], optional = true }
+
 [features]
 hydrate = [
     "leptos/hydrate",
@@ -27,6 +30,7 @@ ssr = [
     "dep:axum",
     "dep:tokio",
     "dep:leptos_axum",
+    "dep:reqwest",
     "leptos/ssr",
     "leptos_meta/ssr",
     "leptos_router/ssr",

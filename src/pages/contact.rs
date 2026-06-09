@@ -1,10 +1,91 @@
 use leptos::prelude::*;
 use leptos_router::hooks::use_query_map;
 
+#[server]
+pub async fn send_contact_email(
+    email: String,
+    phone: Option<String>,
+    contact_method: String,
+    service: String,
+    message: String,
+    additional_answers: Option<String>,
+) -> Result<(), ServerFnError> {
+    #[cfg(feature = "ssr")]
+    {
+        use serde::Serialize;
+        
+        #[derive(Serialize)]
+        struct ResendEmailRequest {
+            from: String,
+            to: Vec<String>,
+            subject: String,
+            html: String,
+        }
+        
+        let api_key = std::env::var("RESEND_API_KEY")
+            .map_err(|_| ServerFnError::new("RESEND_API_KEY environment variable not set"))?;
+        
+        let html_content = format!(
+            "<h2>New Contact Form Submission</h2>\
+             <p><strong>Email:</strong> {}</p>\
+             <p><strong>Phone:</strong> {}</p>\
+             <p><strong>Preferred Contact Method:</strong> {}</p>\
+             <p><strong>Interested Service:</strong> {}</p>\
+             <p><strong>Message:</strong></p>\
+             <pre style=\"white-space: pre-wrap; font-family: sans-serif;\">{}</pre>\
+             <p><strong>Additional Answers:</strong></p>\
+             <pre style=\"white-space: pre-wrap; font-family: sans-serif;\">{}</pre>",
+            email,
+            phone.unwrap_or_else(|| "N/A".to_string()),
+            contact_method,
+            service,
+            message,
+            additional_answers.unwrap_or_else(|| "None".to_string())
+        );
+
+        let client = reqwest::Client::new();
+        let resend_req = ResendEmailRequest {
+            from: "Artorias Tech Lab Form <website@artoriastechlab.com>".to_string(),
+            to: vec!["vicentepsalcedo@gmail.com".to_string()],
+            subject: format!("New Inquiry: {}", service),
+            html: html_content,
+        };
+
+        let response = client
+            .post("https://api.resend.com/emails")
+            .header("Authorization", format!("Bearer {}", api_key))
+            .json(&resend_req)
+            .send()
+            .await
+            .map_err(|e| ServerFnError::new(format!("Failed to send email request: {}", e)))?;
+
+        if response.status().is_success() {
+            Ok(())
+        } else {
+            let status = response.status();
+            let body = response.text().await.unwrap_or_default();
+            Err(ServerFnError::new(format!("Resend API error ({}): {}", status, body)))
+        }
+    }
+    #[cfg(not(feature = "ssr"))]
+    {
+        let _ = (email, phone, contact_method, service, message, additional_answers);
+        Ok(())
+    }
+}
+
 #[component]
 pub fn ContactPage() -> impl IntoView {
     let query_map = use_query_map();
+    let (email, set_email) = signal(String::new());
+    let (phone, set_phone) = signal(String::new());
+    let (contact_method, set_contact_method) = signal("email".to_string());
     let (selected_service, set_selected_service) = signal(String::new());
+    let (additional_answer, set_additional_answer) = signal(String::new());
+    let (message, set_message) = signal(String::new());
+    
+    let (sending, set_sending) = signal(false);
+    let (error_message, set_error_message) = signal(Option::<String>::None);
     let (submitted, set_submitted) = signal(false);
 
     // Sync query parameter once on mount/change
@@ -63,7 +144,31 @@ pub fn ContactPage() -> impl IntoView {
                         view! {
                             <form class="flex flex-col gap-6 text-left" on:submit=move |ev: leptos::web_sys::SubmitEvent| {
                                 ev.prevent_default();
-                                set_submitted.set(true);
+                                set_sending.set(true);
+                                set_error_message.set(None);
+                                
+                                let email_val = email.get();
+                                let phone_val = phone.get();
+                                let phone_opt = if phone_val.is_empty() { None } else { Some(phone_val) };
+                                let method_val = contact_method.get();
+                                let service_val = selected_service.get();
+                                let service_label = if service_val.is_empty() { "General Inquiry".to_string() } else { service_val };
+                                let message_val = message.get();
+                                let add_answer = additional_answer.get();
+                                let add_opt = if add_answer.is_empty() { None } else { Some(add_answer) };
+                                
+                                leptos::task::spawn_local(async move {
+                                    match send_contact_email(email_val, phone_opt, method_val, service_label, message_val, add_opt).await {
+                                        Ok(_) => {
+                                            set_sending.set(false);
+                                            set_submitted.set(true);
+                                        }
+                                        Err(e) => {
+                                            set_sending.set(false);
+                                            set_error_message.set(Some(e.to_string()));
+                                        }
+                                    }
+                                });
                             }>
                                 <div>
                                     <label class="block text-sm font-medium text-slate-300 mb-1">"Email Address"</label>
@@ -72,6 +177,8 @@ pub fn ContactPage() -> impl IntoView {
                                         required 
                                         class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                         placeholder="you@company.com"
+                                        prop:value=email
+                                        on:input=move |ev| set_email.set(event_target_value(&ev))
                                     />
                                 </div>
 
@@ -82,12 +189,16 @@ pub fn ContactPage() -> impl IntoView {
                                             type="tel" 
                                             class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                             placeholder="(555) 000-0000"
+                                            prop:value=phone
+                                            on:input=move |ev| set_phone.set(event_target_value(&ev))
                                         />
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-slate-300 mb-1">"Preferred Contact Method"</label>
                                         <select 
                                             class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors cursor-pointer"
+                                            prop:value=contact_method
+                                            on:change=move |ev| set_contact_method.set(event_target_value(&ev))
                                         >
                                             <option value="email">"Email"</option>
                                             <option value="phone">"Phone Call"</option>
@@ -103,6 +214,7 @@ pub fn ContactPage() -> impl IntoView {
                                         prop:value=selected_service
                                         on:change=move |ev| {
                                             set_selected_service.set(event_target_value(&ev));
+                                            set_additional_answer.set(String::new());
                                         }
                                     >
                                         <option value="">"General Inquiry"</option>
@@ -123,6 +235,8 @@ pub fn ContactPage() -> impl IntoView {
                                                 rows="3" 
                                                 class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. Syncing our CRM to billing, building a secure customer portal..."
+                                                prop:value=additional_answer
+                                                on:input=move |ev| set_additional_answer.set(event_target_value(&ev))
                                             ></textarea>
                                         </div>
                                     }.into_any(),
@@ -135,6 +249,8 @@ pub fn ContactPage() -> impl IntoView {
                                                 type="text" 
                                                 class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. www.mycompany.com"
+                                                prop:value=additional_answer
+                                                on:input=move |ev| set_additional_answer.set(event_target_value(&ev))
                                             />
                                         </div>
                                     }.into_any(),
@@ -147,6 +263,8 @@ pub fn ContactPage() -> impl IntoView {
                                                 type="text" 
                                                 class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. 15 workstations, 2 NAS servers, 1 physical office"
+                                                prop:value=additional_answer
+                                                on:input=move |ev| set_additional_answer.set(event_target_value(&ev))
                                             />
                                         </div>
                                     }.into_any(),
@@ -160,14 +278,27 @@ pub fn ContactPage() -> impl IntoView {
                                         required 
                                         class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                         placeholder="Tell me more about what you want to build or automate..."
+                                        prop:value=message
+                                        on:input=move |ev| set_message.set(event_target_value(&ev))
                                     ></textarea>
                                 </div>
 
+                                {move || error_message.get().map(|err| view! {
+                                    <div class="p-4 bg-rose-500/10 border border-rose-500/30 text-rose-400 rounded-lg text-sm font-mono animate-fadeIn">
+                                        "Error: " {err}
+                                    </div>
+                                })}
+
                                 <button 
                                     type="submit" 
-                                    class="mt-2 w-full px-4 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition-colors font-mono text-sm"
+                                    disabled=sending
+                                    class="mt-2 w-full px-4 py-3 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-950 font-bold rounded-lg transition-colors font-mono text-sm flex items-center justify-center gap-2"
                                 >
-                                    "// Send Secure Request"
+                                    {move || if sending.get() {
+                                        "// Sending Request..."
+                                    } else {
+                                        "// Send Secure Request"
+                                    }}
                                 </button>
                             </form>
                         }.into_any()
