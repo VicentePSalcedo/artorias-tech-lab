@@ -3,21 +3,29 @@ use leptos::prelude::*;
 #[component]
 pub fn ProductsIndex() -> impl IntoView {
     view! {
-        <div class="max-w-4xl mx-auto py-12">
-            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/50 text-cyan-400 text-sm font-mono mb-8">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    "MODULE: PRODUCTS"
+        <div class="flex flex-col gap-16 pb-24">
+            // Hero Section
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                        "Internal " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Products"</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
+                        "High-performance SaaS platforms engineered in-house."
+                    </p>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                    "Internal " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Products"</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
-                    "High-performance SaaS platforms engineered in-house."
-                </p>
-            </div>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500 mt-12">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </section>
 
-            <div class="grid grid-cols-1 max-w-2xl mx-auto gap-8">
+            <div class="max-w-4xl mx-auto px-4 w-full flex flex-col gap-16">
+                <div class="grid grid-cols-1 max-w-2xl mx-auto gap-8">
                 // Renivel Product Card
                 <a href="/products/renivel" class="block rounded-2xl border border-slate-800/60 bg-slate-900/90 p-8 relative overflow-hidden group bento-card bento-scroll-card">
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -51,6 +59,7 @@ pub fn ProductsIndex() -> impl IntoView {
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     }

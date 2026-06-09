@@ -7,22 +7,29 @@ pub fn ServicesPage() -> impl IntoView {
     let (show_infra_specs, set_show_infra_specs) = signal(false);
 
     view! {
-        <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            // Header Section
-            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-900/50 text-emerald-400 text-sm font-mono mb-8">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    "MODULE: SERVICES"
+        <div class="flex flex-col gap-16 pb-24">
+            // Hero Section
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                        "Client " <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">"Services"</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
+                        "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
+                    </p>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                    "Client " <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">"Services"</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
-                    "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
-                </p>
-            </div>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500 mt-12">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </section>
 
-            <div class="flex flex-col gap-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col gap-16">
+                <div class="flex flex-col gap-12">
                 // Service 1: Digital Foundation Systems (Originally Service 2)
                 <div 
                     class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out bento-scroll-card"
@@ -285,6 +292,7 @@ pub fn ServicesPage() -> impl IntoView {
                         "// Request Consultation"
                     </a>
                 </div>
+            </div>
             </div>
         </div>
     }

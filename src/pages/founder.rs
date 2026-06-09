@@ -4,23 +4,30 @@ use crate::components::terminal::TerminalMock;
 #[component]
 pub fn FounderPage() -> impl IntoView {
     view! {
-        <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            // Header Section
-            <div class="mb-16 flex flex-col items-center text-center bento-scroll-card" style="--scroll-progress: 1">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-900/50 text-rose-400 text-sm font-mono mb-8">
-                    <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
-                    "MODULE: FOUNDER"
+        <div class="flex flex-col gap-16 pb-24">
+            // Hero Section
+            <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
+                        "I Build The " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Engine"</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
+                        "Elite engineering without the bureaucratic overhead."
+                    </p>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                    "I Build The " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Engine"</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
-                    "Elite engineering without the bureaucratic overhead."
-                </p>
-            </div>
+                
+                // Animated Scroll Indicator
+                <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500 mt-12">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
+                    <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </section>
 
-            // About Me Profile Card
-            <section class="mb-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                // About Me Profile Card
+                <section class="mb-12">
                 <div class="border border-slate-800/80 bg-slate-900/90 rounded-3xl p-8 md:p-12 relative overflow-hidden bento-card bento-scroll-card">
                     <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8 relative z-10">
                         <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] flex-shrink-0" />
@@ -135,6 +142,7 @@ pub fn FounderPage() -> impl IntoView {
 }"
                 />
             </section>
+            </div>
         </div>
     }
 }
