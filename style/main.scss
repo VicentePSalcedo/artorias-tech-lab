@@ -37,6 +37,15 @@ body {
   }
 }
 
+@keyframes textShimmerLong {
+  0% {
+    background-position: -400% center;
+  }
+  100% {
+    background-position: 400% center;
+  }
+}
+
 .animate-shimmer {
   background: linear-gradient(
     to right,
@@ -46,11 +55,11 @@ body {
     #f43f5e 75%,
     #22d3ee 100%
   );
-  background-size: 400% auto;
+  background-size: 800% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textShimmer 48s linear infinite;
+  animation: textShimmerLong 80s linear infinite;
   filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.2)) drop-shadow(0 0 8px rgba(244, 63, 94, 0.1));
 }
 
