@@ -8,7 +8,7 @@ pub fn ProductsIndex() -> impl IntoView {
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                        "Internal " <span class="animate-shimmer">"Products"</span>
+                        "Internal " <span class="animate-shimmer-cyan">"Products"</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
                         "High-performance SaaS platforms engineered in-house."
