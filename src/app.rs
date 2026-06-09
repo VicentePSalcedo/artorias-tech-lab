@@ -23,6 +23,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <AutoReload options=options.clone() />
                 <HydrationScripts options/>
                 <link rel="icon" type="image/webp" href="/icon.webp"/>
+                <script src="/lenis.min.js"></script>
                 <MetaTags/>
             </head>
             <body>
@@ -31,8 +32,22 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                     "document.addEventListener('DOMContentLoaded', () => {
                         const visibleCards = new Set();
                         const observedCards = new Set();
-                        let isScrolling = false;
                         
+                        // Initialize Lenis smooth scroll
+                        const lenis = new Lenis({
+                            duration: 1.2,
+                            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                            smoothWheel: true,
+                            touchMultiplier: 1.5,
+                        });
+
+                        function raf(time) {
+                            lenis.raf(time);
+                            requestAnimationFrame(raf);
+                        }
+
+                        requestAnimationFrame(raf);
+
                         function updateProgress() {
                             const viewportHeight = window.innerHeight;
                             const viewportCenter = viewportHeight / 2;
@@ -120,14 +135,13 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 
                         scanAndObserve();
 
+                        // Hook Lenis scroll events to trigger animations
+                        lenis.on('scroll', () => {
+                            updateProgress();
+                        });
+
                         window.addEventListener('scroll', () => {
-                            if (!isScrolling) {
-                                window.requestAnimationFrame(() => {
-                                    updateProgress();
-                                    isScrolling = false;
-                                });
-                                isScrolling = true;
-                            }
+                            updateProgress();
                         });
                     });"
                 </script>
