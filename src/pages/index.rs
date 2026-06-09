@@ -96,7 +96,7 @@ pub fn HomePage() -> impl IntoView {
                     </div>
                 </BentoBlock>
 
-                // Module C: Aggressive Signs "AI SEO Rescue" Case Study
+                // Module C: Aggressive Signs "IT Rescue" Case Study
                 <BentoBlock class="md:col-span-2 lg:col-span-3 no-hover">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div class="md:col-span-1 flex justify-center">
@@ -107,19 +107,19 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <div class="md:col-span-2">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-rose-500/20 text-rose-400">"AI Search Case Study"</span>
+                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-rose-500/20 text-rose-400">"The IT Rescue Routine"</span>
                                 <h3 class="text-xl font-bold text-slate-100">"Aggressive Signs"</h3>
                             </div>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                <span class="font-semibold text-white">"If ChatGPT doesn't know you exist, neither do your high-value customers."</span>
-                                " When we partnered with Aggressive Signs, they were completely invisible to AI search engines like Perplexity and SearchGPT because their legacy website blocked modern scrapers."
+                                <span class="font-semibold text-white">"Your business data belongs to you—not your IT provider."</span>
+                                " When we partnered with Aggressive Signs, they were held hostage by an unresponsive agency running their critical operations on a locked-down legacy server box."
                             </p>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                "We migrated their systems, upgraded their website architecture, and formatted their product catalog for AI search visibility. Now, they are instantly recommended as the leading regional authority for sign manufacturing."
+                                "We completely migrated their infrastructure to a high-performance local NAS and VPN server that they own outright, transitioned their team seamlessly to Google Workspace, and optimized their local design workstation hardware."
                             </p>
                             <div class="mt-4 p-4 border border-rose-900/30 bg-rose-950/10 rounded-lg">
                                 <p class="text-sm font-mono text-rose-300">
-                                    "From zero visibility to the top recommendation. Your business needs an AI-ready digital presence to capture customers on modern search engines."
+                                    "No artificial software locks. No 3-week wait times for a support ticket. Just bulletproof systems and direct, same-day responses straight from the engineer."
                                 </p>
                             </div>
                         </div>
