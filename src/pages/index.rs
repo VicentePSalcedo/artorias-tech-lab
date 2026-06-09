@@ -9,7 +9,7 @@ pub fn HomePage() -> impl IntoView {
             // Hero Section
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100">
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
                         "Dominate "
                         <br class="md:hidden" />
                         <span class="animate-shimmer">
