@@ -12,7 +12,7 @@ pub fn ServicesPage() -> impl IntoView {
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                        "Client " <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">"Services"</span>
+                        "Client " <span class="animate-shimmer-emerald">"Services"</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
                         "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."

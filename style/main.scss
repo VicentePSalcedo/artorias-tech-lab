@@ -54,6 +54,40 @@ body {
   filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.35)) drop-shadow(0 0 4px rgba(34, 211, 238, 0.25));
 }
 
+.animate-shimmer-emerald {
+  background: linear-gradient(
+    to right,
+    #34d399 15%,
+    #22d3ee 35%,
+    #67e8f9 50%,
+    #22d3ee 65%,
+    #34d399 85%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 16s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.35)) drop-shadow(0 0 4px rgba(34, 211, 238, 0.25));
+}
+
+.animate-shimmer-rose {
+  background: linear-gradient(
+    to right,
+    #f43f5e 15%,
+    #818cf8 35%,
+    #fda4af 50%,
+    #818cf8 65%,
+    #f43f5e 85%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 16s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(244, 63, 94, 0.35)) drop-shadow(0 0 4px rgba(129, 140, 248, 0.25));
+}
+
 .bento-card {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s ease,
