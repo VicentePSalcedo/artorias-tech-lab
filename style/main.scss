@@ -41,15 +41,17 @@ body {
   background: linear-gradient(
     to right,
     #22d3ee 0%,
-    #34d399 50%,
+    #34d399 25%,
+    #fbbf24 50%,
+    #f43f5e 75%,
     #22d3ee 100%
   );
-  background-size: 200% auto;
+  background-size: 400% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textShimmer 32s linear infinite;
-  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.25)) drop-shadow(0 0 4px rgba(34, 211, 238, 0.2));
+  animation: textShimmer 48s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.2)) drop-shadow(0 0 8px rgba(244, 63, 94, 0.1));
 }
 
 .animate-shimmer-amber {
