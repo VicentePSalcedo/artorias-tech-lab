@@ -12,7 +12,7 @@ pub fn FounderPage() -> impl IntoView {
                     "MODULE: FOUNDER"
                 </div>
                 <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                    "I Build The " <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-indigo-400">"Engine"</span>
+                    "I Build The " <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">"Engine"</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light">
                     "Elite engineering without the bureaucratic overhead."

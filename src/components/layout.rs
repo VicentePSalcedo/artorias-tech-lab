@@ -22,27 +22,12 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                             "Tech Lab"
                         </div>
                     </a>
-                    <nav class="hidden md:flex items-center gap-4 text-xs font-mono">
-                        <a href="/" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/50 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-                            "HOME"
-                        </a>
-                        <a href="/products" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/40 text-cyan-400 hover:bg-cyan-900/20 hover:border-cyan-400/80 transition-all duration-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                            "PRODUCTS"
-                        </a>
-                        <a href="/services" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-900/40 text-emerald-400 hover:bg-emerald-900/20 hover:border-emerald-400/80 transition-all duration-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            "SERVICES"
-                        </a>
-                        <a href="/founder" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-900/40 text-rose-400 hover:bg-rose-900/20 hover:border-rose-400/80 transition-all duration-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
-                            "FOUNDER"
-                        </a>
-                        <a href="/contact" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/40 text-cyan-400 hover:bg-cyan-900/20 hover:border-cyan-400/80 transition-all duration-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                            "COMM_LINK"
-                        </a>
+                    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                        <a href="/" class="hover:text-cyan-400 transition-colors">"Home"</a>
+                        <a href="/products" class="hover:text-cyan-400 transition-colors">"Products"</a>
+                        <a href="/services" class="hover:text-cyan-400 transition-colors">"Client Services"</a>
+                        <a href="/founder" class="hover:text-cyan-400 transition-colors">"Founder"</a>
+                        <a href="/contact" class="hover:text-cyan-400 transition-colors">"Contact"</a>
                         <a href="tel:9042067198" class="ml-4 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition-colors">"904-206-7198"</a>
                     </nav>
 
@@ -62,29 +47,14 @@ pub fn AppLayout(children: Children) -> impl IntoView {
 
                 // Mobile Navigation Dropdown
                 <Show when=move || is_mobile_menu_open.get()>
-                    <div class="md:hidden absolute w-full border-b border-slate-800/60 bg-slate-950 px-4 py-6 flex flex-col gap-4 shadow-2xl">
-                        <a href="/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-800 text-slate-400 text-sm font-mono w-fit" on:click=close_menu>
-                            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-                            "HOME"
-                        </a>
-                        <a href="/products" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/30 border border-cyan-900/40 text-cyan-400 text-sm font-mono w-fit" on:click=close_menu>
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                            "PRODUCTS"
-                        </a>
-                        <a href="/services" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/30 border border-emerald-900/40 text-emerald-400 text-sm font-mono w-fit" on:click=close_menu>
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            "SERVICES"
-                        </a>
-                        <a href="/founder" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-950/30 border border-rose-900/40 text-rose-400 text-sm font-mono w-fit" on:click=close_menu>
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
-                            "FOUNDER"
-                        </a>
-                        <a href="/contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/30 border border-cyan-900/40 text-cyan-400 text-sm font-mono w-fit" on:click=close_menu>
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                            "COMM_LINK"
-                        </a>
+                    <div class="md:hidden absolute w-full border-b border-slate-800/60 bg-slate-950 px-4 py-6 flex flex-col gap-5 shadow-2xl">
+                        <a href="/" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Home"</a>
+                        <a href="/products" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Products"</a>
+                        <a href="/services" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Client Services"</a>
+                        <a href="/founder" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Founder"</a>
+                        <a href="/contact" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Contact"</a>
                         <div class="pt-4 mt-2 border-t border-slate-800/60">
-                            <a href="tel:9042067198" class="inline-block px-5 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition-colors font-mono text-sm" on:click=close_menu>
+                            <a href="tel:9042067198" class="inline-block px-5 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition-colors font-medium" on:click=close_menu>
                                 "Call 904-206-7198"
                             </a>
                         </div>
