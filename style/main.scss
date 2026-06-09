@@ -40,18 +40,35 @@ body {
 .animate-shimmer {
   background: linear-gradient(
     to right,
-    #22d3ee 15%,
-    #34d399 35%,
-    #67e8f9 50%,
-    #34d399 65%,
-    #22d3ee 85%
+    #22d3ee 10%,
+    #34d399 30%,
+    #fbbf24 50%,
+    #f43f5e 70%,
+    #22d3ee 90%
   );
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShimmer 16s linear infinite;
-  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.35)) drop-shadow(0 0 4px rgba(34, 211, 238, 0.25));
+  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.25)) drop-shadow(0 0 8px rgba(244, 63, 94, 0.15));
+}
+
+.animate-shimmer-amber {
+  background: linear-gradient(
+    to right,
+    #f59e0b 15%,
+    #fbbf24 35%,
+    #fef3c7 50%,
+    #fbbf24 65%,
+    #f59e0b 85%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 16s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 4px rgba(251, 191, 36, 0.25));
 }
 
 .animate-shimmer-emerald {

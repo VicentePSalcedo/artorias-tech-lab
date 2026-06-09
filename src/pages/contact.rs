@@ -21,7 +21,7 @@ pub fn ContactPage() -> impl IntoView {
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                        "Request " <span class="animate-shimmer">"Consultation"</span>
+                        "Request " <span class="animate-shimmer-amber">"Consultation"</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
                         "Provide a few details below and I will contact you directly."
@@ -31,7 +31,7 @@ pub fn ContactPage() -> impl IntoView {
                 // Animated Scroll Indicator
                 <div class="animate-scroll-cue flex flex-col items-center gap-2 text-slate-500 mt-12">
                     <span class="text-xs font-mono uppercase tracking-widest text-slate-600">"Scroll to explore"</span>
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                     </svg>
                 </div>
@@ -40,7 +40,7 @@ pub fn ContactPage() -> impl IntoView {
             <div class="max-w-2xl mx-auto px-4 w-full flex flex-col gap-16">
 
             <div class="rounded-2xl border border-slate-800/60 bg-slate-900/90 p-8 md:p-12 relative overflow-hidden bento-card no-hover bento-scroll-card">
-                <div class="absolute inset-0 bg-gradient-to-b from-cyan-950/5 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-amber-950/5 to-transparent"></div>
                 <div class="relative z-10">
                     {move || if submitted.get() {
                         view! {
@@ -54,7 +54,7 @@ pub fn ContactPage() -> impl IntoView {
                                 <p class="text-slate-400 mb-8 max-w-md mx-auto">
                                     "Thank you. I will review your parameters and reach out within 24 hours to schedule our call."
                                 </p>
-                                <a href="/" class="px-6 py-3 bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-200 font-bold rounded-lg transition-colors font-mono text-sm">
+                                <a href="/" class="px-6 py-3 bg-slate-900 border border-slate-800 hover:border-amber-500 text-slate-200 font-bold rounded-lg transition-colors font-mono text-sm">
                                     "// Return Home"
                                 </a>
                             </div>
@@ -70,7 +70,7 @@ pub fn ContactPage() -> impl IntoView {
                                     <input 
                                         type="email" 
                                         required 
-                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors" 
+                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                         placeholder="you@company.com"
                                     />
                                 </div>
@@ -80,14 +80,14 @@ pub fn ContactPage() -> impl IntoView {
                                         <label class="block text-sm font-medium text-slate-300 mb-1">"Phone Number (Optional)"</label>
                                         <input 
                                             type="tel" 
-                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors" 
+                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                             placeholder="(555) 000-0000"
                                         />
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-slate-300 mb-1">"Preferred Contact Method"</label>
                                         <select 
-                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors cursor-pointer"
+                                            class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors cursor-pointer"
                                         >
                                             <option value="email">"Email"</option>
                                             <option value="phone">"Phone Call"</option>
@@ -99,7 +99,7 @@ pub fn ContactPage() -> impl IntoView {
                                 <div>
                                     <label class="block text-sm font-medium text-slate-300 mb-1">"Interested Service"</label>
                                     <select 
-                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors cursor-pointer"
+                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors cursor-pointer"
                                         prop:value=selected_service
                                         on:change=move |ev| {
                                             set_selected_service.set(event_target_value(&ev));
@@ -121,7 +121,7 @@ pub fn ContactPage() -> impl IntoView {
                                             </label>
                                             <textarea 
                                                 rows="3" 
-                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors"
+                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. Syncing our CRM to billing, building a secure customer portal..."
                                             ></textarea>
                                         </div>
@@ -133,7 +133,7 @@ pub fn ContactPage() -> impl IntoView {
                                             </label>
                                             <input 
                                                 type="text" 
-                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors"
+                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. www.mycompany.com"
                                             />
                                         </div>
@@ -145,7 +145,7 @@ pub fn ContactPage() -> impl IntoView {
                                             </label>
                                             <input 
                                                 type="text" 
-                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors"
+                                                class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors"
                                                 placeholder="e.g. 15 workstations, 2 NAS servers, 1 physical office"
                                             />
                                         </div>
@@ -158,14 +158,14 @@ pub fn ContactPage() -> impl IntoView {
                                     <textarea 
                                         rows="4" 
                                         required 
-                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-cyan-500 text-slate-200 transition-colors" 
+                                        class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-amber-500 text-slate-200 transition-colors" 
                                         placeholder="Tell me more about what you want to build or automate..."
                                     ></textarea>
                                 </div>
 
                                 <button 
                                     type="submit" 
-                                    class="mt-2 w-full px-4 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg transition-colors font-mono text-sm"
+                                    class="mt-2 w-full px-4 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition-colors font-mono text-sm"
                                 >
                                     "// Send Secure Request"
                                 </button>
