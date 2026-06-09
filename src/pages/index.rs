@@ -126,30 +126,30 @@ pub fn HomePage() -> impl IntoView {
                     </div>
                 </BentoBlock>
 
-                // Module D: Apex Distribution "Workflow & AI Automation" Case Study
+                // Module D: Celeritech "AI Invoice Processing" Case Study
                 <BentoBlock class="md:col-span-2 lg:col-span-3 no-hover">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div class="md:col-span-1 flex justify-center">
                             // Grayscale SVG placeholder transitioning to brand color
                             <div class="h-32 w-32 rounded-2xl bg-indigo-600 flex items-center justify-center">
-                                <span class="font-black text-3xl text-white">"AD"</span>
+                                <span class="font-black text-3xl text-white">"CT"</span>
                             </div>
                         </div>
                         <div class="md:col-span-2">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-indigo-500/20 text-indigo-400">"Workflow & AI Case Study"</span>
-                                <h3 class="text-xl font-bold text-slate-100">"Apex Distribution"</h3>
+                                <span class="px-2 py-1 rounded text-[10px] uppercase tracking-wider font-bold bg-indigo-500/20 text-indigo-400">"AI Automation Case Study"</span>
+                                <h3 class="text-xl font-bold text-slate-100">"Celeritech"</h3>
                             </div>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                <span class="font-semibold text-white">"Manual data entry is a silent killer of operational margins."</span>
-                                " When we partnered with Apex Distribution, their team was wasting dozens of hours every week copy-pasting inventory logs and customer invoices across separate legacy software programs."
+                                <span class="font-semibold text-white">"Manual invoice entry is a slow, costly bottleneck for growing companies."</span>
+                                " When we partnered with Celeritech, their accounting team was spending hours every day manually opening, reviewing, and typing details from vendor invoices into their databases."
                             </p>
                             <p class="text-slate-300 leading-relaxed mb-4">
-                                "We engineered custom workflow automations that connect their key databases in real-time, and deployed an intelligent AI assistant to scan and extract invoice details directly from incoming emails. This completely eliminated administrative entry work and cut order processing times by 90%."
+                                "We engineered a secure, event-driven AI invoice processing platform. The system automatically reads incoming invoices (PDFs and images), uses advanced language models to instantly extract and validate structured line-item details, and securely synchronizes the results directly to their systems—cutting processing times by over 90%."
                             </p>
                             <div class="mt-4 p-4 border border-indigo-900/30 bg-indigo-950/10 rounded-lg">
                                 <p class="text-sm font-mono text-indigo-300">
-                                    "From 30 hours of weekly manual sorting to complete hands-free automation. Your business needs smart, connected tools to scale operations without adding overhead."
+                                    "From hours of manual sorting to instant, hands-free extraction. Celeritech now processes hundreds of vendor invoices with complete accuracy and zero manual data entry."
                                 </p>
                             </div>
                         </div>
