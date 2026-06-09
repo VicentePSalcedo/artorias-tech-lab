@@ -30,7 +30,7 @@ pub fn FounderPage() -> impl IntoView {
                 <section class="mb-12">
                 <div class="border border-slate-800/80 bg-slate-900/90 rounded-3xl p-8 md:p-12 relative overflow-hidden bento-card bento-scroll-card">
                     <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8 relative z-10">
-                        <img src="/pfp.JPG" alt="Vicente" class="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] flex-shrink-0" />
+                        <img src="/pfp.webp" alt="Vicente" class="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-emerald-500/30 shadow-[0_0_25px_rgba(52,211,153,0.15)] flex-shrink-0" />
                         <div>
                             <div class="flex flex-col md:flex-row items-center gap-3 mb-6">
                                 <h2 class="text-3xl font-bold text-slate-100">"Vicente"</h2>

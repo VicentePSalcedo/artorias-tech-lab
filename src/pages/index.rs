@@ -35,7 +35,7 @@ pub fn HomePage() -> impl IntoView {
                 <BentoBlock class="md:col-span-2 lg:col-span-1 row-span-2 flex flex-col justify-between no-hover">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <img src="/pfp.JPG" alt="Vicente" class="h-10 w-10 rounded-full object-cover border border-cyan-500/30" />
+                            <img src="/pfp.webp" alt="Vicente" class="h-10 w-10 rounded-full object-cover border border-cyan-500/30" />
                             <div>
                                 <h3 class="text-xl font-bold text-slate-100">"Vicente"</h3>
                                 <p class="text-sm text-cyan-400">"Chief Architect"</p>

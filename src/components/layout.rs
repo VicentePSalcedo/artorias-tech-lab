@@ -16,7 +16,7 @@ pub fn AppLayout(children: Children) -> impl IntoView {
             <header class="sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/95">
                 <div class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
                     <a href="/" class="flex items-center gap-3 font-bold text-xl tracking-tight text-slate-100 hover:text-cyan-400 transition-colors" on:click=close_menu>
-                        <img src="/icon-original.png" alt="Artorias Tech Lab Logo" class="h-6 w-6 object-contain" />
+                        <img src="/icon.webp" alt="Artorias Tech Lab Logo" class="h-6 w-6 object-contain" />
                         <div class="flex items-center gap-2">
                             <span class="animate-shimmer">"Artorias"</span>
                             "Tech Lab"

@@ -37,30 +37,19 @@ body {
   }
 }
 
-@keyframes textShimmerLong {
-  0% {
-    background-position: -400% center;
-  }
-  100% {
-    background-position: 400% center;
-  }
-}
-
 .animate-shimmer {
   background: linear-gradient(
     to right,
     #22d3ee 0%,
-    #34d399 25%,
-    #fbbf24 50%,
-    #f43f5e 75%,
+    #34d399 50%,
     #22d3ee 100%
   );
-  background-size: 800% auto;
+  background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textShimmerLong 80s linear infinite;
-  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.2)) drop-shadow(0 0 8px rgba(244, 63, 94, 0.1));
+  animation: textShimmer 32s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.25)) drop-shadow(0 0 4px rgba(34, 211, 238, 0.2));
 }
 
 .animate-shimmer-amber {
