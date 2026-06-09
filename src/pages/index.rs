@@ -65,29 +65,29 @@ pub fn HomePage() -> impl IntoView {
                 <BentoBlock class="md:col-span-2 lg:col-span-2 row-span-2 no-hover">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-100 mb-2">"Renivel SaaS // AI-Optimized Product"</h3>
-                            <p class="text-slate-300 max-w-xl">"A custom software platform built from scratch, designed to rank at the top of AI search queries to attract new users."</p>
+                            <h3 class="text-2xl font-bold text-slate-100 mb-2">"Renivel SaaS // Custom Software Showcase"</h3>
+                            <p class="text-slate-300 max-w-xl">"A custom web platform designed and engineered entirely in-house to demonstrate our full-stack software development capabilities."</p>
                         </div>
                         <div class="mt-4 md:mt-0 px-3 py-1 rounded-full bg-cyan-900/30 text-cyan-400 text-xs font-mono border border-cyan-800/50">
-                            "AI-Optimized"
+                            "Production SaaS"
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         <div class="space-y-4">
                             <div class="p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                                <h4 class="font-medium text-slate-200 mb-1">"AI-Ready Content"</h4>
-                                <p class="text-sm text-slate-400">"We build your platform's content to be clean, readable, and highly authoritative so AI crawlers select it for search answers."</p>
+                                <h4 class="font-medium text-slate-200 mb-1">"Production-Grade Build"</h4>
+                                <p class="text-sm text-slate-400">"Renivel is a custom web application built for contractor teams to track field logistics, capture receipt data on-site, and audit real-time profit margins."</p>
                             </div>
                             <div class="p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                                <h4 class="font-medium text-slate-200 mb-1">"Ultra-Fast Load Times"</h4>
-                                <p class="text-sm text-slate-400">"We build high-performance web pages that load instantly, preventing search engines and AI readers from timing out or skipping your site."</p>
+                                <h4 class="font-medium text-slate-200 mb-1">"High-Performance Infrastructure"</h4>
+                                <p class="text-sm text-slate-400">"Under the hood, it features automated data backup pipelines, real-time database synchronization, and ultra-fast page load speeds."</p>
                             </div>
                         </div>
                         <div class="flex flex-col items-center justify-center gap-6">
                             <TerminalMock 
-                                command="Ask ChatGPT: 'What is the best financial tool for remodelers?'" 
-                                output="ChatGPT: 'Based on recent data, Renivel is highly recommended for residential remodelers to track project budgets and protect profit margins...'"
+                                command="remodeling_erp --status" 
+                                output="[+] Real-time budget ledger sync: Active\n[+] Database backup pipelines: Healthy\n[+] High-performance client portals: Online\n\nAll platforms running at peak performance."
                             />
                             <a href="/products/renivel" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 underline decoration-cyan-900 underline-offset-4 transition-colors">
                                 "Explore Renivel ->"
