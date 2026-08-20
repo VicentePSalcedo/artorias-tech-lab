@@ -43,14 +43,21 @@ The server is connected to a private Tailscale VPN network via Headscale, ensuri
 
 ### Deployment Pipeline
 
-Deployment is handled entirely by a custom Nushell script (`deploy.nu`). The script automates building the release binary, optimizing the WASM output, syncing assets via SSH/rsync, patching the ELF interpreter for Ubuntu compatibility, and restarting the `systemd` service.
+Deployment is handled entirely by a custom Nushell script (`scripts/deploy.nu`). The script automates building the release binary, optimizing the WASM output, syncing assets via SSH/rsync, patching the ELF interpreter for Ubuntu compatibility, and restarting the `systemd` service.
 
 To deploy to production, run:
 ```bash
-nu deploy.nu
+nu scripts/deploy.nu
 ```
 
 *Note: The deployment script assumes you have `id_ed25519` SSH key access to the `ubuntu@100.31.228.128` server.*
+
+### Bleeding Edge Updates
+
+To forcefully update your entire tech stack (Nix environment, Rust crates, and NPM packages) to the absolute newest versions, run:
+```bash
+nu scripts/update.nu
+```
 
 ## Application Architecture
 

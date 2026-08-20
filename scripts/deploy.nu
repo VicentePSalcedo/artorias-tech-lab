@@ -4,6 +4,9 @@
 # Usage: nu deploy.nu
 
 def main [] {
+    let project_root = ($env.FILE_PWD | path dirname)
+    cd $project_root
+
     print "[*] Starting deployment for Artorias Tech Lab..."
 
     # 1. Compile the target in --release mode
