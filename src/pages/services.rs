@@ -2,9 +2,9 @@ use leptos::prelude::*;
 
 #[component]
 pub fn ServicesPage() -> impl IntoView {
-    let (show_apps_specs, set_show_apps_specs) = signal(false);
-    let (show_foundation_specs, set_show_foundation_specs) = signal(false);
-    let (show_infra_specs, set_show_infra_specs) = signal(false);
+    let (show_it_specs, set_show_it_specs) = signal(false);
+    let (show_web_specs, set_show_web_specs) = signal(false);
+    let (show_auto_specs, set_show_auto_specs) = signal(false);
 
     view! {
         <div class="flex flex-col gap-16 pb-24">
@@ -12,10 +12,10 @@ pub fn ServicesPage() -> impl IntoView {
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                        "Client " <span class="animate-shimmer-emerald">"Services"</span>
+                        "IT " <span class="text-emerald-400">"Services"</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-400 max-w-2xl font-light leading-relaxed">
-                        "High-margin consulting and development packages built to eliminate operational bottlenecks and secure absolute ownership of your digital assets."
+                        "Clear, predictable packages for Managed IT, Website Management, and Workflow Automation tailored for small to medium-sized businesses."
                     </p>
                 </div>
                 
@@ -30,15 +30,16 @@ pub fn ServicesPage() -> impl IntoView {
 
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col gap-16">
                 <div class="flex flex-col gap-12">
-                // Service 1: Digital Foundation Systems (Originally Service 2)
+                
+                // Package 1: Managed IT Support
                 <div 
                     class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out bento-scroll-card"
-                    class=("-translate-y-2", move || show_foundation_specs.get())
-                    class=("scale-[1.02]", move || show_foundation_specs.get())
-                    class=("shadow-2xl", move || show_foundation_specs.get())
-                    class=("shadow-emerald-500/20", move || show_foundation_specs.get())
-                    class=("border-emerald-500/50", move || show_foundation_specs.get())
-                    class=("z-20", move || show_foundation_specs.get())
+                    class=("-translate-y-2", move || show_it_specs.get())
+                    class=("scale-[1.02]", move || show_it_specs.get())
+                    class=("shadow-2xl", move || show_it_specs.get())
+                    class=("shadow-emerald-500/20", move || show_it_specs.get())
+                    class=("border-emerald-500/50", move || show_it_specs.get())
+                    class=("z-20", move || show_it_specs.get())
                 >
                     <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,29 +48,29 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                     <div class="relative z-10">
                         <div class="mb-2">
-                            <h2 class="text-2xl font-bold text-slate-100">"Digital Foundation Systems"</h2>
+                            <h2 class="text-2xl font-bold text-slate-100">"Managed IT & Infrastructure Support"</h2>
                         </div>
                         <p class="text-sm font-mono text-emerald-400 mb-4">
-                            "// For businesses that need a high-performance web presence that actually drives revenue."
+                            "// Keep your business online, secure, and running smoothly."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "No generic WordPress templates or bloated page builders. We build custom, hand-coded marketing engines that load in milliseconds, dominate Google rankings, and are structured specifically for LLM search queries (ChatGPT, Perplexity, SearchGPT). Your site will be entirely secure, completely self-owned, and fully optimized to turn traffic into clients."
+                            "Stop wasting hours trying to fix a rogue printer or a dropped wifi signal. This package provides direct remote IT support, hardware setup, and proactive network security for your entire team. We handle the technical headaches so you can run your business."
                         </p>
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                             <ul class="space-y-2 text-slate-400">
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom Websites & Generative Engine Optimization (GEO)"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "High-Converting Landing Pages"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Built-in Contact Forms & Customer Analytics"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Remote IT Support & Troubleshooting"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Computers, Printers, and Router Setups"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Network Security, Backups, and Email Services"</li>
                             </ul>
                             <div class="flex items-center gap-4 w-full md:w-auto justify-end">
                                 <button 
-                                    on:click=move |_| set_show_foundation_specs.update(|v| *v = !*v) 
+                                    on:click=move |_| set_show_it_specs.update(|v| *v = !*v) 
                                     class="px-4 py-2 rounded border border-slate-800 bg-slate-950 font-mono text-xs text-slate-400 hover:text-emerald-400 hover:border-emerald-500 transition-colors"
                                 >
-                                    {move || if show_foundation_specs.get() { "// [hide tech specs]" } else { "// [view tech specs]" }}
+                                    {move || if show_it_specs.get() { "// [hide details]" } else { "// [view details]" }}
                                 </button>
                                 <a 
-                                    href="/contact?service=digital-foundation" 
+                                    href="/contact?service=managed-it" 
                                     class="px-6 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded text-sm transition-colors font-mono"
                                 >
                                     "// Get Started"
@@ -78,24 +79,15 @@ pub fn ServicesPage() -> impl IntoView {
                         </div>
 
                         // Interactive specs
-                        {move || show_foundation_specs.get().then(|| view! {
+                        {move || show_it_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-emerald-400 font-bold">"// PERFORMANCE FOUNDATION"</span>
+                                    <span class="text-emerald-400 font-bold">"// SUPPORT SCOPE"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Core: Clean, custom layouts (no bloated site templates)"</div>
-                                        <div>"• Speed: Optimized for sub-second page loads"</div>
-                                        <div>"• Styles: Bespoke styling for unique brand design"</div>
-                                        <div>"• Standard: Built to achieve maximum performance scores"</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="text-emerald-400 font-bold">"// AI READY & ANALYTICS"</span>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Discovery: Optimized for ChatGPT & Perplexity crawl patterns"</div>
-                                        <div>"• Design: Mobile-first layout for all screen sizes"</div>
-                                        <div>"• Traffic: Custom privacy-friendly client visitor analytics"</div>
-                                        <div>"• Optimization: Instant visual loading for users"</div>
+                                        <div>"• Hardware: Computer & printer provisioning"</div>
+                                        <div>"• Network: Router config & Wifi troubleshooting"</div>
+                                        <div>"• Software: Business email & account setup"</div>
+                                        <div>"• Security: Automated data backups & firewalls"</div>
                                     </div>
                                 </div>
                             </div>
@@ -103,15 +95,15 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                 </div>
 
-                // Service 2: Custom Web Applications & Platforms (Originally Service 1)
+                // Package 2: Website Redesign & Management
                 <div 
                     class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out"
-                    class=("-translate-y-2", move || show_apps_specs.get())
-                    class=("scale-[1.02]", move || show_apps_specs.get())
-                    class=("shadow-2xl", move || show_apps_specs.get())
-                    class=("shadow-cyan-500/20", move || show_apps_specs.get())
-                    class=("border-cyan-500/50", move || show_apps_specs.get())
-                    class=("z-20", move || show_apps_specs.get())
+                    class=("-translate-y-2", move || show_web_specs.get())
+                    class=("scale-[1.02]", move || show_web_specs.get())
+                    class=("shadow-2xl", move || show_web_specs.get())
+                    class=("shadow-cyan-500/20", move || show_web_specs.get())
+                    class=("border-cyan-500/50", move || show_web_specs.get())
+                    class=("z-20", move || show_web_specs.get())
                 >
                     <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,29 +112,29 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                     <div class="relative z-10">
                         <div class="mb-2">
-                            <h2 class="text-2xl font-bold text-slate-100">"Custom Web Applications & Platforms"</h2>
+                            <h2 class="text-2xl font-bold text-slate-100">"Website Redesign & Management"</h2>
                         </div>
                         <p class="text-sm font-mono text-cyan-400 mb-4">
-                            "// For businesses that have outgrown off-the-shelf software and need a tailored digital asset."
+                            "// Turn your outdated website into a modern, trusted digital storefront."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "We engineer bespoke, production-ready web platforms, client portals, and internal tools built to solve specific operational bottlenecks. Leveraging type-safe, ultra-stable software architectures, we build software that scales infinitely, loads instantly, and runs without mystery crashes."
+                            "We handle everything required to establish a professional digital presence. From securing your custom domain and SSL certificates, to redesigning your website and providing custom-branded links, we ensure your business looks sharp and functions flawlessly online."
                         </p>
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                             <ul class="space-y-2 text-slate-400">
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Bespoke Software Platforms & Customer Portals"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Secure Databases & Automatic Software Syncing"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Automated Cloud Setup (AWS & Secure Containers)"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom Website Redesigns"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Domain Registration & SSL Certificates"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom Branded Links & Ongoing Web Management"</li>
                             </ul>
                             <div class="flex items-center gap-4 w-full md:w-auto justify-end">
                                 <button 
-                                    on:click=move |_| set_show_apps_specs.update(|v| *v = !*v) 
+                                    on:click=move |_| set_show_web_specs.update(|v| *v = !*v) 
                                     class="px-4 py-2 rounded border border-slate-800 bg-slate-950 font-mono text-xs text-slate-400 hover:text-cyan-400 hover:border-cyan-500 transition-colors"
                                 >
-                                    {move || if show_apps_specs.get() { "// [hide tech specs]" } else { "// [view tech specs]" }}
+                                    {move || if show_web_specs.get() { "// [hide details]" } else { "// [view details]" }}
                                 </button>
                                 <a 
-                                    href="/contact?service=custom-apps" 
+                                    href="/contact?service=web-management" 
                                     class="px-6 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded text-sm transition-colors font-mono"
                                 >
                                     "// Get Started"
@@ -151,24 +143,15 @@ pub fn ServicesPage() -> impl IntoView {
                         </div>
 
                         // Interactive specs
-                        {move || show_apps_specs.get().then(|| view! {
+                        {move || show_web_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-cyan-400 font-bold">"// CORE CAPABILITIES"</span>
+                                    <span class="text-cyan-400 font-bold">"// WEB MANAGEMENT SCOPE"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Backend: Ultra-reliable and secure database systems"</div>
-                                        <div>"• Interface: High-speed interactive views"</div>
-                                        <div>"• Connections: Secure, fast web link API channels"</div>
-                                        <div>"• Database: Dedicated secure data storage vault"</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="text-cyan-400 font-bold">"// DEPLOYMENT & MAINTENANCE"</span>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Hosting: Secure, isolated cloud servers"</div>
-                                        <div>"• Updates: Automated updates with zero downtime"</div>
-                                        <div>"• Security: Strict cloud access permissions"</div>
-                                        <div>"• Credentials: Fully encrypted security key storage"</div>
+                                        <div>"• Domains: Custom URL registration & setup"</div>
+                                        <div>"• Security: SSL certificate installation & renewal"</div>
+                                        <div>"• Branding: Custom branded domain links"</div>
+                                        <div>"• Updates: Ongoing content & software updates"</div>
                                     </div>
                                 </div>
                             </div>
@@ -176,15 +159,15 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                 </div>
 
-                // Service 3: Infrastructure Engineering & Automation
+                // Package 3: Business Workflow Automation
                 <div 
                     class="border border-slate-800/80 bg-slate-900/90 rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 ease-out bento-scroll-card"
-                    class=("-translate-y-2", move || show_infra_specs.get())
-                    class=("scale-[1.02]", move || show_infra_specs.get())
-                    class=("shadow-2xl", move || show_infra_specs.get())
-                    class=("shadow-rose-500/20", move || show_infra_specs.get())
-                    class=("border-rose-500/50", move || show_infra_specs.get())
-                    class=("z-20", move || show_infra_specs.get())
+                    class=("-translate-y-2", move || show_auto_specs.get())
+                    class=("scale-[1.02]", move || show_auto_specs.get())
+                    class=("shadow-2xl", move || show_auto_specs.get())
+                    class=("shadow-rose-500/20", move || show_auto_specs.get())
+                    class=("border-rose-500/50", move || show_auto_specs.get())
+                    class=("z-20", move || show_auto_specs.get())
                 >
                     <div class="absolute top-0 right-0 p-8 opacity-10">
                         <svg class="w-24 h-24 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -193,29 +176,29 @@ pub fn ServicesPage() -> impl IntoView {
                     </div>
                     <div class="relative z-10">
                         <div class="mb-2">
-                            <h2 class="text-2xl font-bold text-slate-100">"Infrastructure Engineering & Automation"</h2>
+                            <h2 class="text-2xl font-bold text-slate-100">"Business Workflow Automation"</h2>
                         </div>
                         <p class="text-sm font-mono text-rose-400 mb-4">
-                            "// For companies looking to own their data, secure their network, and automate operations."
+                            "// Eliminate tedious data entry and manual tasks."
                         </p>
                         <p class="text-slate-300 mb-6 max-w-3xl leading-relaxed">
-                            "We act as your dedicated systems architect, managing your business infrastructure without the bloat of a traditional IT agency. We specialize in building secure local servers, ensuring total data ownership on hardware you control, and writing custom scripts to connect your software tools."
+                            "If you or your team are spending hours copying and pasting data between systems, we can write custom software scripts to do it for you automatically. We build secure integrations that save time and eliminate human error."
                         </p>
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                             <ul class="space-y-2 text-slate-400">
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Secure Local Servers (NAS) & File Storage"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Google Workspace Management & Security Audits"</li>
-                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Automatic Workflows (connecting your software tools)"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Custom Software Automation Scripts"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Data Entry & Invoice Automation"</li>
+                                <li class="flex items-center gap-3"><span class="text-emerald-400">"✓"</span> "Connecting Disparate Software Systems"</li>
                             </ul>
                             <div class="flex items-center gap-4 w-full md:w-auto justify-end">
                                 <button 
-                                    on:click=move |_| set_show_infra_specs.update(|v| *v = !*v) 
+                                    on:click=move |_| set_show_auto_specs.update(|v| *v = !*v) 
                                     class="px-4 py-2 rounded border border-slate-800 bg-slate-950 font-mono text-xs text-slate-400 hover:text-rose-400 hover:border-rose-500 transition-colors"
                                 >
-                                    {move || if show_infra_specs.get() { "// [hide tech specs]" } else { "// [view tech specs]" }}
+                                    {move || if show_auto_specs.get() { "// [hide details]" } else { "// [view details]" }}
                                 </button>
                                 <a 
-                                    href="/contact?service=infrastructure" 
+                                    href="/contact?service=automation" 
                                     class="px-6 py-2 bg-rose-500 hover:bg-rose-400 text-slate-900 font-bold rounded text-sm transition-colors font-mono"
                                 >
                                     "// Get Started"
@@ -224,24 +207,15 @@ pub fn ServicesPage() -> impl IntoView {
                         </div>
 
                         // Interactive specs
-                        {move || show_infra_specs.get().then(|| view! {
+                        {move || show_auto_specs.get().then(|| view! {
                             <div class="mt-6 pt-6 border-t border-slate-800/60 font-mono text-xs text-slate-400 space-y-4">
                                 <div>
-                                    <span class="text-rose-400 font-bold">"// NETWORK HARDWARE"</span>
+                                    <span class="text-rose-400 font-bold">"// AUTOMATION CAPABILITIES"</span>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Hardware: Custom physical server installation"</div>
-                                        <div>"• System: Secure, redundant local storage file share"</div>
-                                        <div>"• Network: Private, segmented business network"</div>
-                                        <div>"• Remote Access: Secure private network channels"</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="text-rose-400 font-bold">"// SYSTEM AUTOMATIONS"</span>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pl-4 text-slate-300">
-                                        <div>"• Backup: Automated multi-location file backup rotation"</div>
-                                        <div>"• Scripts: Custom integration scripts to link your systems"</div>
-                                        <div>"• Audit: Google Workspace security permission reviews"</div>
-                                        <div>"• Alerts: Real-time team notifications via chat/email"</div>
+                                        <div>"• Scripts: Custom integration scripts"</div>
+                                        <div>"• Syncing: Real-time data synchronization"</div>
+                                        <div>"• Formats: Automated document & PDF parsing"</div>
+                                        <div>"• Alerts: Automated email and SMS notifications"</div>
                                     </div>
                                 </div>
                             </div>
@@ -258,30 +232,30 @@ pub fn ServicesPage() -> impl IntoView {
                 </div>
                 
                 <h3 class="text-lg font-bold text-slate-100 mb-6 text-cyan-400">
-                    "// Engagement Parameters"
+                    "// Why Partner With Me?"
                 </h3>
                 
                 <ul class="space-y-6">
                     <li class="relative pl-6">
                         <span class="absolute left-0 text-cyan-500">"▶"</span>
-                        <strong class="text-slate-200">"Direct Access:"</strong> " You work directly with the Chief Architect. We do not pass you off to account managers, junior developers, or sales reps."
+                        <strong class="text-slate-200">"Direct Access:"</strong> " You work directly with the founder. No account managers, no automated support queues, and no being bounced around a help desk."
                     </li>
                     <li class="relative pl-6">
                         <span class="absolute left-0 text-cyan-500">"▶"</span>
-                        <strong class="text-slate-200">"Infrastructure Focused:"</strong> " We engineer robust backend systems, databases, cloud, and local NAS storage. We do not operate a daily on-call support desk for employee device glitches (e.g., password resets, mouse mapping, broken hardware peripherals)."
+                        <strong class="text-slate-200">"Transparent Packaging:"</strong> " Small and medium-sized businesses need clear solutions, not endless enterprise consulting hours. My services are neatly packaged and priced for real-world impact."
                     </li>
                     <li class="relative pl-6">
                         <span class="absolute left-0 text-cyan-500">"▶"</span>
-                        <strong class="text-slate-200">"Full Autonomy:"</strong> " Every line of code written, server deployed, and piece of hardware specified is owned 100% by your business from day one. Zero vendor lock-in, zero monthly licensing markups."
+                        <strong class="text-slate-200">"Total Ownership:"</strong> " Everything I build, configure, or register for you is owned 100% by your business. No holding your domain name hostage, zero vendor lock-in."
                     </li>
                 </ul>
             </div>
 
             // Contact CTA
             <div class="mt-16 p-8 md:p-12 border border-slate-800/80 bg-slate-900/30 rounded-3xl text-center bento-scroll-card">
-                <h2 class="text-3xl font-bold text-slate-100 mb-4">"Let's build something extraordinary."</h2>
+                <h2 class="text-3xl font-bold text-slate-100 mb-4">"Ready to eliminate IT headaches?"</h2>
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
-                    "If you are ready to upgrade your business infrastructure or build a custom web application, let's talk. No high-pressure sales, just an honest conversation about what you need."
+                    "Reach out today to discuss how we can secure your network, upgrade your web presence, or automate your tedious tasks."
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                     <a href="tel:9042067198" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg transition-colors font-mono text-sm">

@@ -24,7 +24,6 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                     </a>
                     <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
                         <a href="/" class="hover:text-cyan-400 transition-colors">"Home"</a>
-                        <a href="/products" class="hover:text-cyan-400 transition-colors">"Products"</a>
                         <a href="/services" class="hover:text-cyan-400 transition-colors">"Client Services"</a>
                         <a href="/founder" class="hover:text-cyan-400 transition-colors">"Founder"</a>
                         <a href="/contact" class="hover:text-cyan-400 transition-colors">"Contact"</a>
@@ -49,7 +48,6 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                 <Show when=move || is_mobile_menu_open.get()>
                     <div class="md:hidden absolute w-full border-b border-slate-800/60 bg-slate-950 px-4 py-6 flex flex-col gap-5 shadow-2xl">
                         <a href="/" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Home"</a>
-                        <a href="/products" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Products"</a>
                         <a href="/services" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Client Services"</a>
                         <a href="/founder" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Founder"</a>
                         <a href="/contact" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Contact"</a>

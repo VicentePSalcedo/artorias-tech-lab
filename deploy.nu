@@ -17,6 +17,9 @@ def main [] {
 
     print "[+] Build successful."
 
+    print "[*] Patching ELF interpreter for Ubuntu target..."
+    patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 target/release/artorias-tech-lab
+
     # 2. Configuration for AWS Lightsail
     let remote_user = "ubuntu"
     let remote_host = "100.31.228.128"
@@ -29,15 +32,15 @@ def main [] {
     
     # Sync site (CSS, JS, WASM assets)
     print "[*] Syncing site assets..."
-    ^rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete target/site/ $"($remote_user)@($remote_host):($remote_dir)/site/"
+    ^rsync -avz -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" --delete target/site/ $"($remote_user)@($remote_host):($remote_dir)/site/"
     
     # Sync server binary
     print "[*] Syncing server binary..."
-    ^rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" target/release/artorias-tech-lab $"($remote_user)@($remote_host):($remote_dir)/"
+    ^rsync -avz -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" target/release/artorias-tech-lab $"($remote_user)@($remote_host):($remote_dir)/"
 
     # 3. Recycle the systemd service
     print "[*] Restarting systemd service..."
-    ^ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $"($remote_user)@($remote_host)" "sudo systemctl restart artorias-tech-lab"
+    ^ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no $"($remote_user)@($remote_host)" "sudo systemctl restart artorias-tech-lab"
 
     print "[+] Deployment complete! Your system is now live."
 }

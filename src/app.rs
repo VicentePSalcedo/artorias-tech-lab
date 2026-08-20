@@ -9,8 +9,6 @@ use crate::components::layout::AppLayout;
 use crate::pages::index::HomePage;
 use crate::pages::services::ServicesPage;
 use crate::pages::founder::FounderPage;
-use crate::pages::products::index::ProductsIndex;
-use crate::pages::products::renivel::RenivelPage;
 use crate::pages::contact::ContactPage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
@@ -168,8 +166,6 @@ pub fn App() -> impl IntoView {
                     <Route path=StaticSegment("founder") view=FounderPage/>
                     <Route path=StaticSegment("services") view=ServicesPage/>
                     <Route path=StaticSegment("contact") view=ContactPage/>
-                    <Route path=StaticSegment("products") view=ProductsIndex/>
-                    <Route path=(StaticSegment("products"), StaticSegment("renivel")) view=RenivelPage/>
                 </Routes>
             </AppLayout>
         </Router>
