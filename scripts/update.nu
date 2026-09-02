@@ -47,11 +47,17 @@ def main [] {
     }
     print ""
 
-    print "[+] Done. Changed files:"
-    git status --porcelain | lines | each { |l| print $"  ($l)" }
-    print ""
-    print "[+] Next steps:"
-    print "    1. `nix develop -c cargo leptos watch` - pull the new toolchain and verify the build"
-    print "    2. Review and commit the lockfile bumps"
-    print "    3. Deploy with `nix develop -c nu scripts/deploy.nu`"
+    # Commit lockfile changes (only if something actually changed)
+    let lock_changed = (git status --porcelain Cargo.lock flake.lock package-lock.json | lines | length)
+    if $lock_changed > 0 {
+        git add Cargo.lock flake.lock package-lock.json
+        git commit -q -m "chore: update dependencies (nix flake, cargo, npm)"
+        print $"(ansi green)Committed(ansi reset) lockfile updates."
+        print ""
+        print "[+] Next: verify the build with `nix develop -c cargo leptos watch`, then deploy manually."
+    } else {
+        print "No lockfile changes - everything is already up to date."
+        print ""
+        print "[+] Nothing to do."
+    }
 }
