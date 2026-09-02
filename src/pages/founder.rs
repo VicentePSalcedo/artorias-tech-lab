@@ -93,17 +93,17 @@ pub fn FounderPage() -> impl IntoView {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </div>
-                            <h2 class="text-2xl font-bold text-slate-100">"For Enterprise Consulting"</h2>
+                            <h2 class="text-2xl font-bold text-slate-100">"For Growing Teams"</h2>
                         </div>
                         <p class="text-slate-300 leading-relaxed mb-6">
-                            "Look at the infrastructure behind Renivel. I architect highly scalable Next.js and NestJS platforms, write high-performance native services, manage secure AWS cloud pipelines, and can solve your most complex backend automation bottlenecks without hallucinating."
+                            "Beyond day-to-day support: I architect secure cloud infrastructure, automate repetitive operations, and modernize legacy systems. When your business outgrows break-fix IT, this is the side that scales with you."
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <span class="text-cyan-400 mt-1">"→"</span>
                                 <div>
-                                    <h4 class="font-bold text-slate-200">"Full-Stack Ecosystems"</h4>
-                                    <p class="text-sm text-slate-400">"End-to-end TypeScript architectures with Next.js, NestJS, and PostgreSQL, alongside memory-safe secure backends."</p>
+                                    <h4 class="font-bold text-slate-200">"Operations Automation"</h4>
+                                    <p class="text-sm text-slate-400">"Custom pipelines and integrations that eliminate manual busywork across your tools."</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">

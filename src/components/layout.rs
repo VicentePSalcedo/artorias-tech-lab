@@ -1,5 +1,9 @@
 use leptos::prelude::*;
 
+// Stripe Customer Portal - enable in Stripe Dashboard (Settings > Billing > Customer Portal),
+// then paste the portal login link here. Customers use it to update payment methods or cancel.
+pub const STRIPE_PORTAL_URL: &str = "https://billing.stripe.com/p/login/dRm4gz0zE77p0H1bdves000";
+
 #[component]
 pub fn AppLayout(children: Children) -> impl IntoView {
     let (is_mobile_menu_open, set_mobile_menu_open) = signal(false);
@@ -24,8 +28,8 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                     </a>
                     <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
                         <a href="/" class="hover:text-cyan-400 transition-colors">"Home"</a>
-                        <a href="/services" class="hover:text-cyan-400 transition-colors">"Client Services"</a>
-                        <a href="/founder" class="hover:text-cyan-400 transition-colors">"Founder"</a>
+                        <a href="/pricing" class="hover:text-cyan-400 transition-colors">"Pricing"</a>
+                        <a href="/faq" class="hover:text-cyan-400 transition-colors">"FAQ"</a>
                         <a href="/contact" class="hover:text-cyan-400 transition-colors">"Contact"</a>
                         <a href="tel:9042067198" class="ml-4 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition-colors">"904-206-7198"</a>
                     </nav>
@@ -48,8 +52,8 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                 <Show when=move || is_mobile_menu_open.get()>
                     <div class="md:hidden absolute w-full border-b border-slate-800/60 bg-slate-950 px-4 py-6 flex flex-col gap-5 shadow-2xl">
                         <a href="/" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Home"</a>
-                        <a href="/services" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Client Services"</a>
-                        <a href="/founder" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Founder"</a>
+                        <a href="/pricing" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Pricing"</a>
+                        <a href="/faq" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"FAQ"</a>
                         <a href="/contact" class="text-slate-200 hover:text-cyan-400 font-medium text-lg" on:click=close_menu>"Contact"</a>
                         <div class="pt-4 mt-2 border-t border-slate-800/60">
                             <a href="tel:9042067198" class="inline-block px-5 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition-colors font-medium" on:click=close_menu>
@@ -64,10 +68,39 @@ pub fn AppLayout(children: Children) -> impl IntoView {
                 {children()}
             </main>
             
-            <footer class="border-t border-slate-800/60 py-8 mt-auto relative z-10">
-                <div class="container mx-auto px-4 flex flex-col items-center justify-center gap-2 text-sm text-slate-500">
-                    <p>"© " {chrono::Local::now().format("%Y").to_string()} " Artorias Tech Lab. All rights reserved."</p>
-                    <a href="tel:9042067198" class="hover:text-cyan-400 transition-colors">"904-206-7198"</a>
+            <footer class="border-t border-slate-800/60 py-10 mt-auto relative z-10">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                        <div class="flex flex-col gap-3">
+                            <span class="font-bold text-slate-200">"Artorias Tech Lab"</span>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-xs">
+                                "Small business IT that just works. Flat monthly, no contracts, and a human who answers the phone."
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider">"Quick Links"</span>
+                            <div class="flex flex-col gap-2 text-sm">
+                                <a href="/" class="text-slate-400 hover:text-cyan-400 transition-colors">"Home"</a>
+                                <a href="/pricing" class="text-slate-400 hover:text-cyan-400 transition-colors">"Pricing"</a>
+                                <a href="/faq" class="text-slate-400 hover:text-cyan-400 transition-colors">"FAQ"</a>
+                                <a href="/contact" class="text-slate-400 hover:text-cyan-400 transition-colors">"Contact"</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider">"Contact"</span>
+                            <a href="tel:9042067198" class="text-slate-400 hover:text-cyan-400 transition-colors text-sm">"(904) 206-7198"</a>
+                            <p class="text-sm text-slate-500">"Mon–Fri, 9am–5pm ET"</p>
+                            <p class="text-sm text-slate-500">"Jacksonville, FL"</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+                        <p>"© " {chrono::Local::now().format("%Y").to_string()} " Artorias Tech Lab. All rights reserved."</p>
+                        <div class="flex items-center gap-5">
+                            <a href={STRIPE_PORTAL_URL} class="hover:text-cyan-400 transition-colors">"Manage Subscription"</a>
+                            <a href="/terms-and-conditions" class="hover:text-cyan-400 transition-colors">"Terms of Service"</a>
+                            <a href="/privacy-policy" class="hover:text-cyan-400 transition-colors">"Privacy Policy"</a>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>

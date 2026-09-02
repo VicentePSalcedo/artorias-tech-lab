@@ -9,26 +9,27 @@ pub fn HomePage() -> impl IntoView {
             <section class="relative min-h-[72vh] flex flex-col justify-center items-center text-center px-4">
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 uppercase">
-                        "IT Consulting & "
+                        "Stop Fighting "
                         <br class="md:hidden" />
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
-                            "Technology Solutions"
+                            "Your Computers."
                         </span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-                        "Reliable IT support, website management, and workflow automation for small to medium-sized businesses."
+                        "Your email, wifi, computers, and backups should just work — so you can work. I'm the IT guy for small businesses: flat monthly support, no contracts, and a human who answers the phone."
                     </p>
                 </div>
                 
                 // Centered Call to Action
                 <div class="flex flex-col sm:flex-row gap-4 items-center mt-4">
-                    <a href="/contact" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-lg text-lg transition-colors font-mono shadow-lg shadow-emerald-500/20">
-                        "// Request IT Support"
+                    <a href="tel:9042067198" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-lg text-lg transition-colors font-mono shadow-lg shadow-emerald-500/20">
+                        "Call (904) 206-7198"
                     </a>
-                    <a href="/services" class="px-8 py-4 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-slate-200 font-bold rounded-lg text-lg transition-colors font-mono">
-                        "View Services"
+                    <a href="/pricing" class="px-8 py-4 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-slate-200 font-bold rounded-lg text-lg transition-colors font-mono">
+                        "View Pricing"
                     </a>
                 </div>
+                <p class="text-sm text-slate-400 font-mono mt-4">"Direct line — no call centers, no ticket queues. I answer my own phone, 9am–5pm Mon–Fri."</p>
             </section>
 
             <BentoGrid>
@@ -38,9 +39,9 @@ pub fn HomePage() -> impl IntoView {
                         <div class="md:col-span-1 flex flex-col items-center justify-center text-center">
                             <img src="/pfp.webp" alt="Vicente" class="h-32 w-32 rounded-full object-cover border-4 border-emerald-500/30 mb-4" />
                             <h3 class="text-2xl font-bold text-slate-100">"Vicente"</h3>
-                            <p class="text-md text-emerald-400 font-mono">"// Your Dedicated IT Partner"</p>
+                            <p class="text-md text-emerald-400 font-mono">"Your Dedicated IT Partner"</p>
                             <div class="mt-6 w-full border-t border-slate-800/60 pt-4">
-                                <div class="text-xs text-slate-500 font-mono mb-2">"// System Status"</div>
+                                <div class="text-xs text-slate-500 font-mono mb-2">"System Status"</div>
                                 <div class="flex items-center justify-center gap-2 text-sm text-emerald-400">
                                     <div class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></div>
                                     "Accepting new clients"
@@ -53,15 +54,88 @@ pub fn HomePage() -> impl IntoView {
                                 "whoami // Technology Consultant"
                             </div>
                             <p class="text-slate-300 text-lg leading-relaxed mb-6">
-                                "Artorias Tech Lab is a one-man IT consultancy built to help small and medium-sized businesses operate smoothly. Instead of navigating frustrating call centers or waiting days for help, you get direct, rapid support."
+                                "Tech breaks at the worst possible moment — 9am Monday, mid-call, the day before payroll. It's frustrating, it's expensive, and it's not your job to fix it. I'm Vicente — one IT guy who has fixed a thousand small-business problems just like yours."
                             </p>
-                            <p class="text-slate-300 text-lg leading-relaxed">
-                                "From setting up printers and securing your network, to redesigning your website and automating data entry, I handle the tech so you can focus on your business."
+                            <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                                "From a single laptop to a full office, I make the tech disappear so you can get back to the work you started your business to do. If it breaks, you call me — and I answer."
                             </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-slate-300">
+                                    <span class="text-emerald-400">"✓"</span>
+                                    <span>"You work directly with the founder — no account managers, no ticket queues."</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-300">
+                                    <span class="text-emerald-400">"✓"</span>
+                                    <span>"Your keys, hardware, and data belong to you. No vendor lock-in, ever."</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-300">
+                                    <span class="text-emerald-400">"✓"</span>
+                                    <span>"Same-day responses, remote-first support, flat predictable pricing."</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                <a href="tel:9042067198" class="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition-colors font-mono text-sm">
+                                    "Call (904) 206-7198"
+                                </a>
+                                <span class="text-sm text-slate-400 font-mono">"Call anytime, 9am–5pm Mon–Fri. Flat monthly from $299 — no contracts."</span>
+                            </div>
                         </div>
                     </div>
                 </BentoBlock>
             </BentoGrid>
+
+            // The Villain: Sound Familiar?
+            <section class="max-w-4xl mx-auto px-4 w-full mt-24">
+                <div class="border border-slate-800/80 bg-slate-900/30 rounded-3xl p-8 md:p-12 bento-scroll-card">
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-900/50 text-rose-400 text-sm font-mono mb-6">
+                            <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+                            "SOUND FAMILIAR?"
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-100 uppercase tracking-tight">
+                            "Your Week, " <span class="text-rose-400">"As Told By Your Tech"</span>
+                        </h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex items-start gap-3 text-slate-300">
+                            <span class="text-rose-400 mt-1 font-bold">"✗"</span>
+                            <div>
+                                <div class="font-bold text-slate-100 mb-1">"9:00 AM MONDAY"</div>
+                                <p class="text-sm leading-relaxed">"The printer eats the invoice run. Twenty minutes gone before you've poured your coffee."</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 text-slate-300">
+                            <span class="text-rose-400 mt-1 font-bold">"✗"</span>
+                            <div>
+                                <div class="font-bold text-slate-100 mb-1">"MID-CALL"</div>
+                                <p class="text-sm leading-relaxed">"The wifi drops with a client on the line. You sound like a garage door opening and closing."</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 text-slate-300">
+                            <span class="text-rose-400 mt-1 font-bold">"✗"</span>
+                            <div>
+                                <div class="font-bold text-slate-100 mb-1">"FRIDAY, 4:30 PM"</div>
+                                <p class="text-sm leading-relaxed">"Email stops working right before payroll. You are now the IT department."</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 text-slate-300">
+                            <span class="text-rose-400 mt-1 font-bold">"✗"</span>
+                            <div>
+                                <div class="font-bold text-slate-100 mb-1">"LATE SATURDAY"</div>
+                                <p class="text-sm leading-relaxed">"You wonder — is anything actually backed up? You're not sure. That should scare you a little."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mt-10 text-center max-w-2xl mx-auto leading-relaxed">
+                        "This is IT chaos. It's costing you time, money, and peace of mind — and the fix isn't learning more tech. The fix is one phone call."
+                    </p>
+                    <div class="text-center mt-8">
+                        <a href="tel:9042067198" class="px-8 py-3 bg-rose-500 hover:bg-rose-400 text-slate-950 font-bold rounded-lg transition-colors font-mono text-sm">
+                            "Call (904) 206-7198"
+                        </a>
+                    </div>
+                </div>
+            </section>
 
             // Case Studies Header
             <div class="mt-24 text-center mb-10 px-4 bento-scroll-card">
@@ -138,65 +212,6 @@ pub fn HomePage() -> impl IntoView {
                 </BentoBlock>
             </BentoGrid>
 
-            // FAQ / Explanation Section
-            <section class="max-w-4xl mx-auto mt-24 px-4 bento-scroll-card">
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-900/50 text-emerald-400 text-sm font-mono mb-6">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        "COMMON QUESTIONS"
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-100 mb-6 uppercase tracking-tight">
-                        "Frequently Asked " <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">"Questions"</span>
-                    </h2>
-                    <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                        "Everything you need to know about working with Artorias Tech Lab."
-                    </p>
-                </div>
-
-                <div class="flex flex-col gap-6">
-                    // Q1
-                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-emerald-400">
-                            "01 // Do you provide remote or on-site support?"
-                        </h3>
-                        <p class="text-slate-300 leading-relaxed">
-                            "The majority of our IT support is handled remotely for maximum speed and efficiency. Whether you need a printer set up, an email account recovered, or a network issue resolved, we can usually fix it without you waiting for a technician to drive to your office."
-                        </p>
-                    </div>
-
-                    // Q2
-                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-emerald-400">
-                            "02 // Why does my business need a custom domain?"
-                        </h3>
-                        <p class="text-slate-300 leading-relaxed">
-                            "A custom domain (like yourbusiness.com) gives you professional, branded email addresses instead of using a standard @gmail.com account. It also allows us to set up secure SSL certificates for your website and custom branded links for your marketing, instantly building trust with your customers."
-                        </p>
-                    </div>
-
-                    // Q3
-                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-emerald-400">
-                            "03 // What does 'software automation' mean for my business?"
-                        </h3>
-                        <p class="text-slate-300 leading-relaxed">
-                            "If you have employees spending hours copying and pasting data, manually sending emails, or re-typing invoices, we can write custom software to do it automatically. Automation eliminates tedious manual labor, reduces human error, and frees up your team to focus on actual work."
-                        </p>
-                    </div>
-
-                    // Q4
-                    <div class="border border-slate-800/80 bg-slate-900/40 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="text-xl font-bold text-slate-100 mb-3 font-mono text-emerald-400">
-                            "04 // How does pricing work?"
-                        </h3>
-                        <p class="text-slate-300 leading-relaxed">
-                            "It depends on the service. Ongoing IT support and website management are typically structured as a predictable monthly retainer. Custom projects like a total website redesign or building a custom automation tool are priced as a one-time project fee. We keep our pricing transparent and explicitly tailored for small to medium-sized businesses."
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            
         </div>
     }
 }

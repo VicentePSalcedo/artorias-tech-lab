@@ -8,8 +8,11 @@ use leptos_router::{
 use crate::components::layout::AppLayout;
 use crate::pages::index::HomePage;
 use crate::pages::services::ServicesPage;
-use crate::pages::founder::FounderPage;
+use crate::pages::faq::FaqPage;
 use crate::pages::contact::ContactPage;
+use crate::pages::onboarding::OnboardingPage;
+use crate::pages::terms::TermsPage;
+use crate::pages::privacy::PrivacyPage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
@@ -155,17 +158,20 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/artorias-tech-lab.css"/>
-        <Title text="Artorias Tech Lab | AI Search Visibility & Web Platforms"/>
-        <Meta name="description" content="AI Search Optimization & premium web systems to ensure your business, products, and services are recommended by ChatGPT, Claude, and Perplexity."/>
-        <Meta name="keywords" content="AI SEO, AI Search Visibility, Custom Web Platforms, Digital Architect, ChatGPT SEO, Perplexity Optimization"/>
+        <Title text="Artorias Tech Lab | Small Business IT Support — Flat Monthly, No Contracts"/>
+        <Meta name="description" content="Stop fighting your computers. Artorias Tech Lab keeps your email, wifi, backups, and security running so you can run your business. Flat monthly from $299, no contracts. Call (904) 206-7198."/>
+        <Meta name="keywords" content="small business IT support, managed IT Jacksonville, IT guy for small business, business email setup, Google Workspace migration, remote IT support, backup and security, flat monthly IT"/>
 
         <Router>
             <AppLayout>
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("") view=HomePage/>
-                    <Route path=StaticSegment("founder") view=FounderPage/>
-                    <Route path=StaticSegment("services") view=ServicesPage/>
+                    <Route path=StaticSegment("pricing") view=ServicesPage/>
+                    <Route path=StaticSegment("faq") view=FaqPage/>
                     <Route path=StaticSegment("contact") view=ContactPage/>
+                    <Route path=StaticSegment("onboarding") view=OnboardingPage/>
+                    <Route path=StaticSegment("terms-and-conditions") view=TermsPage/>
+                    <Route path=StaticSegment("privacy-policy") view=PrivacyPage/>
                 </Routes>
             </AppLayout>
         </Router>
